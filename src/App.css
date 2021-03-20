@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap');
+
+/*==============HEADER================================*/
+header input{
+    width:200px;
+    height: 25px;
+    margin-bottom: 10px;
+    margin-top: 6px;
+    background-color: transparent;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: #F8F8F8;
+    color: #F8F8F8;
+}
+
+header label {
+    color: #F8F8F8;
+    font-style: italic;
+    margin-top: 6px;
+}
+
+header, footer {
+    background-color: #4c4c4c;
+}
+
+.btn {
+    color: #F8F8F8;
+}
+
+.labelLanguage{
+    border-bottom-style: solid;
+    border-bottom-color: #F8F8F8;
+    width: 75px;
+}
+
+/*=============MAIN===================================*/
+
+.description {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.theme{
+font-size: 2rem;
+}
+
+.dash {
+    border-bottom-style: dotted;
+}
+
+.btnBig {
+    background-color: #4c4c4c;
+    color: #F8F8F8;
+    width: 155px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.date{
+    font-size: 2rem;
+}
+
+/*======================FOOTER=============================*/
+
+.footerText {
+    letter-spacing: 0px;
+    opacity: 1;
+    color: #FDFEFE;
+}
+
+footer input{
+    background-color: transparent;
+    color: #F8F8F8;
+    border-style: groove;
+}
+
+.btnGo{
+    background-color: #F8F8F8;
+    color: #4c4c4c;
+}
+
