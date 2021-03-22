@@ -59,12 +59,20 @@ font-size: 2rem;
     font-size: 2rem;
 }
 
+.top{
+    position: relative;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 1rem;
+}
+
 /*======================FOOTER=============================*/
 
 .footerText {
-    letter-spacing: 0px;
-    opacity: 1;
-    color: #FDFEFE;
+    color: #F8F8F8;
+    width: 16rem;
 }
 
 footer input{
