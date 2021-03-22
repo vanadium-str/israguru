@@ -86,3 +86,14 @@ footer input{
     color: #4c4c4c;
 }
 
+/*=========================OTHER==========================*/
+.scroll {
+    width: 550px;
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.leftLine {
+    background-color: #4c4c4c;
+}

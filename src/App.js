@@ -1,17 +1,34 @@
 import './App.css';
+import React, {Component} from 'react';
 import Main from "./components/Main";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import FullInfoExcursion from "./components/FullInfoExcursion";
+import GuideInfo from "./components/GuideInfo";
 
 
-function App() {
-    return (
-        <div>
-            <Header/>
-            <Main/>
-            <Footer/>
-        </div>
-    );
+class App extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            displayPage: 'home'
+        }
+    }
+    changePage = page => {
+        this.setState({
+            displayPage: page
+        });
+    }
+
+    render() {
+        switch (this.state.displayPage) {
+            case 'fullInfo':
+                return <FullInfoExcursion/>;
+            case 'guideInfo':
+                return <GuideInfo/>
+            default:
+                return <Main changePage={this.changePage}/>
+
+        }
+    }
 }
 
 export default App;
