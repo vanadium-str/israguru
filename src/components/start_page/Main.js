@@ -1,19 +1,16 @@
 import React from 'react';
 import {FaClock, FaMapMarkerAlt, FaMapSigns, FaShekelSign, FaUserFriends} from "react-icons/fa";
+import Image from "../excursionBlock/Image";
+import Description from "../excursionBlock/Description";
 
-const ExcursionList = (props) => {
+const Main = (props) => {
     return (
         <div className='container-fluid'>
             <div className='row border-bottom'>
                 <div className='col-8'>
                     <div className='d-flex justify-content-between'>
-                        <img src='https://i.imgur.com/B4wu8rx.jpg' alt='picture'  width='160' height='160'/>
-                        <div className='ml-4'>
-                            <h1 className='theme font-weight-bold'>{props.title}</h1>
-                            <p className='description font-italic'> {props.summary}</p>
-                            <hr/>
-                            <p><FaMapSigns/> Уровень сложности материала: {props.level}</p>
-                        </div>
+                        <Image img={props.img}/>
+                        <Description summary={props.summary} level={props.level} title={props.title}/>
                     </div>
                 </div>
                 <div className='col-2'>
@@ -48,4 +45,4 @@ const ExcursionList = (props) => {
     );
 };
 
-export default ExcursionList;
+export default Main;

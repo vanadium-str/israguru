@@ -88,7 +88,7 @@ footer input{
 
 /*=========================OTHER==========================*/
 .scroll {
-    width: 550px;
+    width: 750px;
     height: 600px;
     overflow: scroll;
     overflow-x: hidden;
@@ -96,4 +96,8 @@ footer input{
 
 .leftLine {
     background-color: #4c4c4c;
+}
+.imgGuide {
+    width: 25rem;
+    height: 25rem;
 }

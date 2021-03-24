@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import Header from "./Header";
-import Footer from "./Footer";
-import ExcursionList from "./ExcursionList";
+import Header from "./start_page/Header";
+import Footer from "./start_page/Footer";
+import Main from "./start_page/Main";
 import {bannerData} from "../json/bannerData";
 
-class Main extends Component{
+class Home extends Component{
     constructor(props) {
         super(props);
     }
@@ -16,7 +16,7 @@ class Main extends Component{
                 <Header/>
                 {bannerData.map((data, key) => {
                     return (
-                        <ExcursionList
+                        <Main
                             key={key}
                             title={data.title}
                             summary={data.summary}
@@ -37,4 +37,4 @@ class Main extends Component{
     }
 };
 
-export default Main;
+export default Home;

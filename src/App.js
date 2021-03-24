@@ -1,6 +1,6 @@
 import './App.css';
 import React, {Component} from 'react';
-import Main from "./components/Main";
+import Home from "./components/Home";
 import FullInfoExcursion from "./components/FullInfoExcursion";
 import GuideInfo from "./components/GuideInfo";
 
@@ -25,7 +25,7 @@ class App extends Component{
             case 'guideInfo':
                 return <GuideInfo/>
             default:
-                return <Main changePage={this.changePage}/>
+                return <Home changePage={this.changePage}/>
 
         }
     }
