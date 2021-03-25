@@ -68,6 +68,10 @@ font-size: 2rem;
     bottom: 1rem;
 }
 
+.cursor{
+    cursor: pointer;
+}
+
 /*======================FOOTER=============================*/
 
 .footerText {
@@ -88,8 +92,8 @@ footer input{
 
 /*=========================OTHER==========================*/
 .scroll {
-    width: 750px;
-    height: 600px;
+    width: 47rem;
+    height: 36rem;
     overflow: scroll;
     overflow-x: hidden;
 }
@@ -97,7 +101,8 @@ footer input{
 .leftLine {
     background-color: #4c4c4c;
 }
-.imgGuide {
-    width: 25rem;
-    height: 25rem;
+
+
+.themeBack{
+    background-image: url("./images/back.jpg");
 }

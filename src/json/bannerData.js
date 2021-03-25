@@ -10,7 +10,7 @@ export const bannerData = [
         "timeTo": "20.00",
         "price": 150,
         "places": 5,
-        "guide": "Святослав Волк",
+        "guide": "1",
     },
     {
         "title": "Тель-Авив. С чего все начиналось и кто во всем виноват?",
@@ -23,6 +23,6 @@ export const bannerData = [
         "timeTo": "20.00",
         "price": 150,
         "places": 5,
-        "guide": "Святослав Волк"
+        "guide": "1"
     }
 ]

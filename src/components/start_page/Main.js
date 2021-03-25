@@ -1,7 +1,11 @@
 import React from 'react';
-import {FaClock, FaMapMarkerAlt, FaMapSigns, FaShekelSign, FaUserFriends} from "react-icons/fa";
 import Image from "../excursionBlock/Image";
 import Description from "../excursionBlock/Description";
+import Date from "../excursionBlock/Date";
+import Guide from "../excursionBlock/Guide";
+import Info from "../excursionBlock/Info";
+import Button from "../excursionBlock/Button";
+import {guideInfo} from "../../json/guideInfo";
 
 const Main = (props) => {
     return (
@@ -14,30 +18,17 @@ const Main = (props) => {
                     </div>
                 </div>
                 <div className='col-2'>
-                    <div className='row top'>
-                        <p className='font-weight-bold font-italic d-flex align-items-center mr-1 date'>03</p>
-                        <div>
-                            <p className='dash mb-0'>сентября</p>
-                            <p>воскресенье</p>
-                        </div>
-                    </div>
-                    <div className='row bottom'>
-                        <img className='mr-1 h-25 w-25 rounded-circle' src='https://i.imgur.com/ehJcD5r.jpg' alt='guide'/>
-                        <div>
-                            <p className='small mb-0'>Ваш гид:</p>
-                            <p onClick={()=>{props.changePage('guideInfo')}}>{props.guide}</p>
-                        </div>
-                    </div>
+                    <Date/>
+                    {guideInfo.filter(k=>k.id===props.guide).map((data,key) =>{
+                        return (
+                            <Guide name={data.name} surname={data.surname} changePage={props.changePage}/>
+                        )
+                    })}
                 </div>
                 <div className='col-2'>
-                    <div className='top'>
-                        <p className='m-0 font-weight-bold'><FaMapMarkerAlt/> {props.city}</p>
-                        <p className='m-0'><FaClock/> <b>{props.timeFrom} - {props.timeTo}</b>(4 часа)</p>
-                        <p className='m-0'><FaShekelSign/> <b>{props.price}</b> (≈$36)</p>
-                        <p className='font-weight-bold'><FaUserFriends/> Осталось {props.places} мест</p>
-                    </div>
+                    <Info city={props.city} timeFrom={props.timeFrom} timeTo={props.timeTo} price={props.price} places={props.places}/>
                     <div className='bottom'>
-                        <button className='btnBig' onClick={()=>{props.changePage('fullInfo')}}>Подробнее</button>
+                    <Button changePage={props.changePage}/>
                     </div>
                 </div>
             </div>
