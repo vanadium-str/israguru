@@ -1,12 +1,13 @@
 import React from 'react';
+import style from "../../css_modules/main.module.css";
 
 const Date = () => {
     return (
         <div className='row top'>
             {/*{TODO => take DATE from JSON bannerData}*/}
-            <p className='font-weight-bold font-italic d-flex align-items-center mr-1 date'>03</p>
+            <p className={`${style.date} font-weight-bold font-italic d-flex align-items-center mr-1`}>03</p>
             <div>
-                <p className='dash mb-0'>сентября</p>
+                <p className={`mb-0 ${style.dash}`}>сентября</p>
                 <p>воскресенье</p>
             </div>
         </div>

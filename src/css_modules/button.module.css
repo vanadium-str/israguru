@@ -1,0 +1,16 @@
+.btnBig {
+    background-color: #4c4c4c;
+    color: #F8F8F8;
+    width: 155px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.btnGo{
+    background-color: #F8F8F8;
+    color: #4c4c4c;
+}
+
+.btn {
+    color: #F8F8F8;
+}

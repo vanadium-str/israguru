@@ -1,0 +1,15 @@
+.theme{
+    font-size: 2rem;
+}
+
+.dash {
+    border-bottom-style: dotted;
+}
+
+.date{
+    font-size: 2rem;
+}
+
+.description {
+    font-family: 'PT Sans', sans-serif;
+}

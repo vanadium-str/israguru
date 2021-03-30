@@ -4,11 +4,12 @@ import Description from "../excursionBlock/Description";
 import Date from "../excursionBlock/Date";
 import Button from "../excursionBlock/Button";
 import {bannerData} from "../../json/bannerData";
+import style from "../../css_modules/main.module.css";
 
 const GuideAbout = props => {
     return (
         <div>
-            <h2 className='theme font-weight-bold'>{props.name} {props.surname}</h2>
+            <h2 className={`${style.theme} font-weight-bold`}>{props.name} {props.surname}</h2>
             <div className='mb-3'>Лицензированный гид (верифицирован israguru.com)</div>
             <div className='scroll'>
                 <h4 className='font-weight-bold'>Кто я </h4>
@@ -20,11 +21,17 @@ const GuideAbout = props => {
                     bannerData.filter(k => k.guide === props.id).map((data, key) => {
                         return (
                             <div className='row shadow mb-2 mr-2 ml-1'>
-                                <div className='col-9 p-0'><Description summary={data.summary} level={data.level}
-                                                                        title={data.title}/></div>
+                                <div className='col-9 p-0'>
+                                    <Description
+                                        summary={data.summary}
+                                        level={data.level}
+                                        title={data.title}/>
+                                </div>
                                 <div className='col-3 d-flex justify-content-center'>
                                     <div><Date/></div>
-                                    <div className='bottom mb-5'><Button changePage={props.changePage}/></div>
+                                    <div className='bottom mb-5'>
+                                        <Button guide={props.id}/>
+                                    </div>
                                 </div>
                             </div>
                         )

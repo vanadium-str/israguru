@@ -1,11 +1,18 @@
 import React from 'react';
+import {IsraGuruContext} from "../utils/Context";
+import style from "../../css_modules/button.module.css";
 
-const Button = props => {
+const Button = (props) => {
     return (
-            <button className='btnBig' onClick={() => {
-                props.changePage('fullInfo', props.guide)
-            }}>Подробнее
-            </button>
+        <IsraGuruContext.Consumer>
+            {
+                value=>
+                    <button className={`${style.btnBig}`} onClick={() => {
+                        value.changePage('fullInfo', props.guide)
+                    }}>Подробнее
+                    </button>
+            }
+        </IsraGuruContext.Consumer>
     );
 };
 

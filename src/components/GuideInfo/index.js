@@ -9,10 +9,10 @@ const Index = (props) => {
                 <div className='col-3'>
                     {/*TODO => Take src from JSON*/}
                     <img className='rounded-circle w-100 mt-5 ml-5'
-                         src='' alt='guide'/>
+                         src={guideInfo.find(item=>item.id===props.guide).imgGuide} alt='guide'/>
                 </div>
                 <div className='col-9 mt-5 d-flex justify-content-end'>
-                    {guideInfo.map((data, key) => {
+                    {guideInfo.filter(k=>k.id===props.guide).map((data, key) => {
                         return (
                             <GuideAbout
                                 key={key}
@@ -22,7 +22,6 @@ const Index = (props) => {
                                 id={data.id}
                                 img={data.imgGuide}
                                 cities={data.cities}
-                                changePage={props.changePage}
                             />
                         )
                     })}

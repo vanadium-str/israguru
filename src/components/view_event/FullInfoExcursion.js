@@ -6,49 +6,44 @@ import Date from "../excursionBlock/Date";
 import Info from "../excursionBlock/Info";
 import {FaInfoCircle} from "react-icons/all";
 import {guideInfo} from "../../json/guideInfo";
+import {bannerData} from "../../json/bannerData";
+import style from "../../css_modules/button.module.css";
 
 const FullInfoExcursion = (props) => {
     return (
         <div className='themeBack'>
             <div className='row'>
-                <div className='col-7 offset-3'>
-                    <Guide img={guideInfo.find(item=>item.id===props.guide).imgGuide}/>
+                <div className='col-7 offset-3 mb-5 mt-5'>
+                    <Guide img={guideInfo.find(item => item.id === props.guide).imgGuide}
+                           name={guideInfo.find(item => item.id === props.guide).name}
+                           surname={guideInfo.find(item => item.id === props.guide).surname}
+                    />
                 </div>
-                <div className='col-2'>
-                    <button className='btnBig'>Пойду</button>
+                <div className='col-2 mb-5 mt-5'>
+                    <button className={`${style.btnBig}`}>Пойду</button>
                 </div>
             </div>
             {/*TODO*/}
             <div className='row'>
                 <div className='col-3 ml-5'>
-                    <Image/>
+                    <Image img={bannerData.find(item => item.guide === props.guide).img}/>
                 </div>
                 <div className='col-8 border-bottom border-dark'>
-                    <Description/>
-                    <div className='row mr-0 ml-0'>
-                        <div className='col-6'>
-                            <Date/>
-                        </div>
-                        <div className='col-6'>
-                            <Info/>
+                    <Description
+                        summary={bannerData.find(item => item.guide === props.guide).summary}
+                        level={bannerData.find(item => item.guide === props.guide).level}
+                        title={bannerData.find(item => item.guide === props.guide).title}/>
+                    <div className='row mr-0 ml-0 d-flex justify-content-around'>
+                        <div className='d-flex align-items-center'><Date/></div>
+                        <div><Info
+                            city={bannerData.find(item => item.guide === props.guide).city}
+                            timeFrom={bannerData.find(item => item.guide === props.guide).timeFrom}
+                            timeTo={bannerData.find(item => item.guide === props.guide).timeTo}
+                            price={bannerData.find(item => item.guide === props.guide).price}
+                            places={bannerData.find(item => item.guide === props.guide).places}/>
                         </div>
                     </div>
-                    <p>'В субботу, 4-го июля в 10 часов утра, состоится экскурсия «Побазарим» - прогулка по территории рынка\n' +
-                        'Кармель (рынок не работает) и кварталу «Керем Тайманим».\n' +
-                        'Это совершенно новая экскурсия расскажет о почти 20-летнем периоде между созданием Неве Цедека - первого\n' +
-                        'еврейского поселения за пределами стен Яффо и Тель-Авива - первого еврейского города.\n' +
-                        'Начиная с 1-го июля утренние экскурсии будут начинаться на час раньше – в 10 утра. Жарко!\n' +
-                        'Расписание — это лишь объявление о намерении, поэтому возможны изменения и дополнения. Следите за\n' +
-                        'информацией и анонсами на главной странице сайта. Уточнения об окончательной дате, месте встречи и\n' +
-                        'тд.\n' +
-                        'В субботу, 4-го июля в 10 часов утра, состоится экскурсия «Побазарим» - прогулка по территории рынка\n' +
-                        'Кармель (рынок не работает) и кварталу «Керем Тайманим».\n' +
-                        'Это совершенно новая экскурсия расскажет о почти 20-летнем периоде между созданием Неве Цедека - первого\n' +
-                        'еврейского поселения за пределами стен Яффо и Тель-Авива - первого еврейского города.\n' +
-                        'Начиная с 1-го июля утренние экскурсии будут начинаться на час раньше – в 10 утра. Жарко!\n' +
-                        'Расписание — это лишь объявление о намерении, поэтому возможны изменения и дополнения. Следите за\n' +
-                        'информацией и анонсами на главной странице сайта. Уточнения об окончательной дате, месте встречи и\n' +
-                        'тд.\n'</p>
+                    <p className='mb-5'>{bannerData.find(item => item.guide === props.guide).fullDescription}</p>
                 </div>
             </div>
             <div className='row'>
@@ -61,7 +56,9 @@ const FullInfoExcursion = (props) => {
                         от причала в пятницу в {props.timeFrom} TODO. Будем рады видеть вас и ваших детей (от 4-х лет)
                         и собак (от года).</p>
                     {/*TODO =>Take from JSON bannerData*/}
-                    <div className='small font-italic mb-3'><FaInfoCircle/> Участникам программы МАСА и репатриантам до 1 года - 50% скидка</div>
+                    <div className='small font-italic mb-3'><FaInfoCircle/> Участникам программы МАСА и репатриантам до
+                        1 года - 50% скидка
+                    </div>
                 </div>
             </div>
             <div className='row mt-3'>
@@ -69,10 +66,15 @@ const FullInfoExcursion = (props) => {
                     <Date/>
                 </div>
                 <div className='col-5'>
-                    <Info/>
+                    <Info
+                        city={bannerData.find(item => item.guide === props.guide).city}
+                        timeFrom={bannerData.find(item => item.guide === props.guide).timeFrom}
+                        timeTo={bannerData.find(item => item.guide === props.guide).timeTo}
+                        price={bannerData.find(item => item.guide === props.guide).price}
+                        places={bannerData.find(item => item.guide === props.guide).places}/>
                 </div>
                 <div className='col-2'>
-                    <button className='btnBig'>Пойду</button>
+                    <button className={`${style.btnBig}`}>Пойду</button>
                 </div>
             </div>
         </div>

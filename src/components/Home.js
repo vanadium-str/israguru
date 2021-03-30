@@ -4,7 +4,7 @@ import Footer from "./start_page/Footer";
 import Main from "./start_page/Main";
 import {bannerData} from "../json/bannerData";
 
-class Home extends Component{
+class Home extends Component {
     constructor(props) {
         super(props);
     }
@@ -28,7 +28,7 @@ class Home extends Component{
                             timeTo={data.timeTo}
                             price={data.price}
                             places={data.places}
-                            changePage={this.props.changePage}/>
+                        />
                     )
                 })}
                 <Footer/>

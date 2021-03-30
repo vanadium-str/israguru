@@ -13,16 +13,16 @@ const Main = (props) => {
             <div className='row shadow mb-3'>
                 <div className='col-8'>
                     <div className='d-flex justify-content-between'>
-                        <Image img={props.img}/>
-                        <Description summary={props.summary} level={props.level} title={props.title}/>
+                        <div><Image img={props.img}/></div>
+                        <div className='ml-4'><Description summary={props.summary} level={props.level} title={props.title}/></div>
                     </div>
                 </div>
                 <div className='col-2'>
-                   <Date/>
+                    <Date/>
                     {guideInfo.filter(k=>k.id===props.guide).map((data,key) =>{
                         return (
                             <div className='row bottom'>
-                            <Guide name={data.name} surname={data.surname} changePage={props.changePage} img={data.imgGuide}/>
+                                <Guide name={data.name} surname={data.surname} img={data.imgGuide} guide={props.guide}/>
                             </div>
                         )
                     })}
@@ -30,7 +30,7 @@ const Main = (props) => {
                 <div className='col-2'>
                     <Info city={props.city} timeFrom={props.timeFrom} timeTo={props.timeTo} price={props.price} places={props.places}/>
                     <div className='bottom'>
-                        <Button changePage={props.changePage} guide={props.guide}/>
+                        <Button  guide={props.guide}/>
                     </div>
                 </div>
             </div>

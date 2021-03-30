@@ -1,4 +1,6 @@
 import React from 'react';
+import style from "../../css_modules/button.module.css";
+import lang from "../../css_modules/header.module.css";
 import {FaSistrix} from "react-icons/all";
 
 const Header = () => {
@@ -30,10 +32,10 @@ const Header = () => {
                 </label>
             </div>
             <div className='col-2'>
-                <label className='labelLanguage'>Язык
+                <label className={`${lang.labelLanguage}`}>Язык
                     <div className='d-flex flex-row'>
-                    <button className='btn w-25 mr-1 font-weight-bold pl-0 pb-0'>EN</button>
-                    <button className='btn w-25 font-weight-bold pb-0'>RU</button>
+                    <button className={`${style.btn} btn w-25 mr-1 font-weight-bold pl-0 pb-0`}>EN</button>
+                    <button className={`${style.btn} btn w-25 font-weight-bold pb-0`}>RU</button>
                     </div>
                 </label>
             </div>
