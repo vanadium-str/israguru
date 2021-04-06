@@ -1,8 +1,9 @@
 import React from 'react';
+import {bannerData} from "../../json/bannerData";
 
-const Image = (props) => {
+const Image = ({id}) => {
     return (
-        <img src={props.img} alt='picture' width='160' height='160'/>
+        <img src={bannerData[id].img} alt='picture' width='160' height='160'/>
     );
 };
 

@@ -1,6 +1,6 @@
 import './App.css';
 import React, {Component} from 'react';
-import {IsraGuruContext} from "./components/utils/Context";
+import {IsraGuruContext} from "./utils/Context";
 import StartPage from "./components/StartPage";
 
 
@@ -9,15 +9,15 @@ class App extends Component{
         super(props);
         this.state = {
             displayPage: '',
-            guide:''
-            // guideData:guideInfo,
-            // excursionData: bannerData
+            guide:'',
+            id:''
         }
     }
-    changePage = (page, guide) => {
+    changePage = (page, guide, id) => {
         this.setState({
             displayPage: page,
-            guide
+            guide,
+            id
         });
     }
 
@@ -27,7 +27,8 @@ class App extends Component{
                 {
                     changePage: this.changePage,
                     displayPage: this.state.displayPage,
-                    guide:this.state.guide
+                    guide: this.state.guide,
+                    id: this.state.id
                 }
             }>
                 <StartPage/>

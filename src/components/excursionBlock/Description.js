@@ -1,14 +1,15 @@
 import React from 'react';
 import {FaMapSigns} from "react-icons/fa";
 import style from "../../css_modules/main.module.css";
+import {bannerData} from "../../json/bannerData";
 
-const Description = props => {
+const Description = ({id}) => {
     return (
             <div>
-                <h1 className={`${style.theme} font-weight-bold`}>{props.title}</h1>
-                <p className={`${style.description} font-italic`}> {props.summary}</p>
+                <h1 className={`${style.theme} font-weight-bold`}>{bannerData[id].title}</h1>
+                <p className={`${style.description} font-italic`}> {bannerData[id].summary}</p>
                 <hr/>
-                <p><FaMapSigns/> Уровень сложности материала: {props.level}</p>
+                <p><FaMapSigns/> Уровень сложности материала: {bannerData[id].level}</p>
             </div>
     );
 };

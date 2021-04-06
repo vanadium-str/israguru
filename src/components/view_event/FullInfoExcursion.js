@@ -5,19 +5,17 @@ import Description from "../excursionBlock/Description";
 import Date from "../excursionBlock/Date";
 import Info from "../excursionBlock/Info";
 import {FaInfoCircle} from "react-icons/all";
-import {guideInfo} from "../../json/guideInfo";
 import {bannerData} from "../../json/bannerData";
 import style from "../../css_modules/button.module.css";
+import other from "../../css_modules/other.module.css";
+import MapContainer from "../../map/MapContainer";
 
-const FullInfoExcursion = (props) => {
+const FullInfoExcursion = ({id, guide}) => {
     return (
-        <div className='themeBack'>
+        <div className={`${other.themeBack}`}>
             <div className='row'>
                 <div className='col-7 offset-3 mb-5 mt-5'>
-                    <Guide img={guideInfo.find(item => item.id === props.guide).imgGuide}
-                           name={guideInfo.find(item => item.id === props.guide).name}
-                           surname={guideInfo.find(item => item.id === props.guide).surname}
-                    />
+                    <Guide guide={guide} id={id}/>
                 </div>
                 <div className='col-2 mb-5 mt-5'>
                     <button className={`${style.btnBig}`}>Пойду</button>
@@ -26,34 +24,27 @@ const FullInfoExcursion = (props) => {
             {/*TODO*/}
             <div className='row'>
                 <div className='col-3 ml-5'>
-                    <Image img={bannerData.find(item => item.guide === props.guide).img}/>
+                    <Image id={id}/>
                 </div>
                 <div className='col-8 border-bottom border-dark'>
-                    <Description
-                        summary={bannerData.find(item => item.guide === props.guide).summary}
-                        level={bannerData.find(item => item.guide === props.guide).level}
-                        title={bannerData.find(item => item.guide === props.guide).title}/>
+                    <Description id={id}/>
                     <div className='row mr-0 ml-0 d-flex justify-content-around'>
                         <div className='d-flex align-items-center'><Date/></div>
-                        <div><Info
-                            city={bannerData.find(item => item.guide === props.guide).city}
-                            timeFrom={bannerData.find(item => item.guide === props.guide).timeFrom}
-                            timeTo={bannerData.find(item => item.guide === props.guide).timeTo}
-                            price={bannerData.find(item => item.guide === props.guide).price}
-                            places={bannerData.find(item => item.guide === props.guide).places}/>
+                        <div><Info id={id}/>
                         </div>
                     </div>
-                    <p className='mb-5'>{bannerData.find(item => item.guide === props.guide).fullDescription}</p>
+                    <p className='mb-5'>{bannerData[id].fullDescription}</p>
                 </div>
             </div>
             <div className='row'>
-                {/*TODO => Take from JSON bannerData + (image size)*/}
-                <img className='col-3 ml-5' src='' alt='MAP'/>
+                <div className='col-3 ml-5'>
+                    <MapContainer/>
+                </div>
                 <div className='col-8 border-bottom border-dark'>
                     <h4 className='font-weight-bold mb-3 mt-4'>Где встречаемся?</h4>
                     {/*TODO =>Take from JSON bannerData*/}
                     <p className='mb-5'>Часовая башня в Яффо. На перекрестке у фалафельной. На левой стороне
-                        от причала в пятницу в {props.timeFrom} TODO. Будем рады видеть вас и ваших детей (от 4-х лет)
+                        от причала в пятницу в {bannerData[id].timeFrom} TODO. Будем рады видеть вас и ваших детей (от 4-х лет)
                         и собак (от года).</p>
                     {/*TODO =>Take from JSON bannerData*/}
                     <div className='small font-italic mb-3'><FaInfoCircle/> Участникам программы МАСА и репатриантам до
@@ -66,12 +57,7 @@ const FullInfoExcursion = (props) => {
                     <Date/>
                 </div>
                 <div className='col-5'>
-                    <Info
-                        city={bannerData.find(item => item.guide === props.guide).city}
-                        timeFrom={bannerData.find(item => item.guide === props.guide).timeFrom}
-                        timeTo={bannerData.find(item => item.guide === props.guide).timeTo}
-                        price={bannerData.find(item => item.guide === props.guide).price}
-                        places={bannerData.find(item => item.guide === props.guide).places}/>
+                    <Info id={id}/>
                 </div>
                 <div className='col-2'>
                     <button className={`${style.btnBig}`}>Пойду</button>

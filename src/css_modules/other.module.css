@@ -1,0 +1,19 @@
+.scroll {
+    width: 47rem;
+    height: 36rem;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.themeBack{
+    background-image: url("../images/back.jpg");
+}
+
+.top{
+    position: relative;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 1rem;
+}

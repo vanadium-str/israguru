@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap');
 
-/*==============HEADER================================*/
-header input{
-    width:200px;
+header input {
+    width: 200px;
     height: 25px;
     margin-bottom: 10px;
     margin-top: 6px;
@@ -23,43 +22,39 @@ header, footer {
     background-color: #4c4c4c;
 }
 
-/*=============MAIN===================================*/
-
-.top{
-    position: relative;
-}
-
-.bottom{
-    position: absolute;
-    bottom: 1rem;
-}
-
-.cursor{
-    cursor: pointer;
-}
-
-/*======================FOOTER=============================*/
-
-footer input{
+footer input {
     background-color: transparent;
     color: #F8F8F8;
     border-style: groove;
 }
 
+/*========================================================*/
 
-
-/*=========================OTHER==========================*/
-.scroll {
-    width: 47rem;
-    height: 36rem;
-    overflow: scroll;
-    overflow-x: hidden;
+.cursor {
+    cursor: pointer;
 }
 
-.leftLine {
-    background-color: #4c4c4c;
+label button:hover{
+    background:#ECD59E;
 }
 
-.themeBack{
-    background-image: url("./images/back.jpg");
+.popupList {
+    list-style-type: none;
+    background-color: #F8F8F8;
+    width: 20rem;
+    height: 20rem;
+}
+
+.popupList li:hover{
+    background:#ECD59E;
+}
+
+.popupHeader{
+    background-color: #ECD59E;
+    width: 60rem;
+    height: 20rem;
+}
+
+.popupHeader h3{
+    width: 10rem;
 }
