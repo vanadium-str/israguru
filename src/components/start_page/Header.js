@@ -4,6 +4,7 @@ import lang from "../../css_modules/header.module.css";
 import {FaSistrix} from "react-icons/all";
 import ModalLevel from "../../modal/ModalLevel";
 import ModalCity from "../../modal/ModalCity";
+import ModalCalendar from "../../modal/ModalCalendar";
 
 const Header = () => {
     return (
@@ -17,8 +18,7 @@ const Header = () => {
                 <div className='col-3'>
                     <label>Дата
                         <div className='d-flex flex-row'>
-                            <input className='w-25 mr-3' type='text' placeholder='Month'/>
-                            <input className='w-25' type='text' placeholder='mm dd'/>
+                            <ModalCalendar/>
                         </div>
                     </label>
                 </div>

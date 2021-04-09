@@ -1,41 +1,28 @@
 import './App.css';
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import {IsraGuruContext} from "./utils/Context";
 import StartPage from "./components/StartPage";
 
+const App = () => {
 
-class App extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            displayPage: '',
-            guide:'',
-            id:''
-        }
-    }
-    changePage = (page, guide, id) => {
-        this.setState({
-            displayPage: page,
-            guide,
-            id
-        });
+    const [displayPage, setDisplayPage] = useState('');
+    const [idGuide, setIdGuide] = useState('');
+    const [idExcursion, setIdExcursion] = useState('');
+    const [level, setLevel] = useState('');
+
+    const changePage = (page, guide, id) => {
+        setDisplayPage(page);
+        setIdGuide(guide);
+        setIdExcursion(id);
     }
 
-    render() {
         return (
             <IsraGuruContext.Provider value={
-                {
-                    changePage: this.changePage,
-                    displayPage: this.state.displayPage,
-                    guide: this.state.guide,
-                    id: this.state.id
-                }
+                {changePage, level, setLevel, displayPage, idGuide, idExcursion}
             }>
                 <StartPage/>
             </IsraGuruContext.Provider>
-            // return <SignupEvent/>
         )
-    }
 }
 
 export default App;

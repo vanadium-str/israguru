@@ -1,28 +1,23 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {IsraGuruContext} from "../utils/Context";
 import FullInfoExcursion from "./view_event/FullInfoExcursion";
 import GuideInfo from "./GuideInfo/index";
 import Home from "./Home";
+import SignupEvent from "./signup_event/SignupEvent";
 
 
 const StartPage = () => {
-    return (
-        <IsraGuruContext.Consumer>{
-            ({displayPage, guide, id})=>{
-                switch (displayPage) {
-                    case 'fullInfo':
-                        return <FullInfoExcursion guide={guide} id={id}/>;
-                    case 'guideInfo':
-                        return <GuideInfo guide={guide} id={id}/>
-                    default:
-                        return <Home guide={guide}/>
-
-
-                }
-            }
-        }
-        </IsraGuruContext.Consumer>
-    );
+    const {displayPage, idExcursion, idGuide, level} = useContext(IsraGuruContext);
+    switch (displayPage) {
+        case 'fullInfo':
+            return <FullInfoExcursion idGuide={idGuide} idExcursion={idExcursion}/>;
+        case 'guideInfo':
+            return <GuideInfo idGuide={idGuide} idExcursion={idExcursion}/>;
+        case 'signUp':
+            return <SignupEvent idGuide={idGuide} idExcursion={idExcursion}/>
+        default:
+            return <Home level={level}/>;
+    }
 };
 
 export default StartPage;

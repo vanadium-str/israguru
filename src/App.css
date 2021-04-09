@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap');
 
 header input {
-    width: 200px;
-    height: 25px;
-    margin-bottom: 10px;
-    margin-top: 6px;
+    width: 8rem;
+    height: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.2rem;
     background-color: transparent;
     border: none;
     border-bottom-style: solid;
@@ -35,23 +35,26 @@ footer input {
 }
 
 label button:hover{
-    background:#ECD59E;
+    background:#dcc5a1;
 }
 
 .popupList {
-    list-style-type: none;
     background-color: #F8F8F8;
     width: 20rem;
     height: 20rem;
 }
 
 .popupList li:hover{
-    background:#ECD59E;
+    background:#dcc5a1;
+}
+
+.popupList li {
+    list-style-type: none;
 }
 
 .popupHeader{
-    background-color: #ECD59E;
-    width: 60rem;
+    background-color: #dcc5a1;
+    width: 35rem;
     height: 20rem;
 }
 

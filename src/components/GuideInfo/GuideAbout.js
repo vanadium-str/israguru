@@ -7,31 +7,31 @@ import style from "../../css_modules/main.module.css";
 import other from "../../css_modules/other.module.css";
 import {guideInfo} from "../../json/guideInfo";
 
-const GuideAbout = ({id, guide}) => {
+const GuideAbout = ({idExcursion, idGuide}) => {
     return (
         <div>
-            <h2 className={`${style.theme} font-weight-bold`}>{guideInfo[guide].name} {guideInfo[guide].surname}</h2>
+            <h2 className={`${style.theme} font-weight-bold`}>{guideInfo[idGuide].name} {guideInfo[idGuide].surname}</h2>
             <div className='mb-3'>Лицензированный гид (верифицирован israguru.com)</div>
             <div className={`${other.scroll}`}>
                 <h4 className='font-weight-bold'>Кто я </h4>
-                <p>{guideInfo[guide].description}</p>
+                <p>{guideInfo[idGuide].description}</p>
                 <h4 className='font-weight-bold mb-5 mt-5'>Ближайшие экскурсии</h4>
                 {/*TODO*/}
                 {/*<Home/>*/}
                 <div className='row shadow mb-2 mr-2 ml-1 p-2'>
                     <div className='col-9 p-0'>
-                        <Description id={id}/>
+                        <Description id={idExcursion}/>
                     </div>
                     <div className='col-3 d-flex justify-content-center'>
                         <div><Date/></div>
                         <div className={`${other.bottom} mb-5`}>
-                            <Button guide={guide} id={id}/>
+                            <Button guide={idGuide} id={idExcursion}/>
                         </div>
                     </div>
                 </div>
                 <h4 className='font-weight-bold mt-5'>Я могу</h4>
                 <div>Также в индивидуальном порядке могу провести экскурсии по следующим городам:
-                    <ul className='mt-2'>{guideInfo[guide].cities.map(cities =>
+                    <ul className='mt-2'>{guideInfo[idGuide].cities.map(cities =>
                         <li key={cities}>{cities}</li>)}
                     </ul>
                 </div>
