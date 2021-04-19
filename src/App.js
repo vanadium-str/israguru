@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
 import {IsraGuruContext} from "./utils/Context";
-import StartPage from "./components/StartPage";
+import SwitchPage from "./components/SwitchPage";
 
 const App = () => {
 
@@ -9,6 +9,7 @@ const App = () => {
     const [idGuide, setIdGuide] = useState('');
     const [idExcursion, setIdExcursion] = useState('');
     const [level, setLevel] = useState('');
+    const [city, setCity] = useState('');
 
     const changePage = (page, guide, id) => {
         setDisplayPage(page);
@@ -18,9 +19,9 @@ const App = () => {
 
         return (
             <IsraGuruContext.Provider value={
-                {changePage, level, setLevel, displayPage, idGuide, idExcursion}
+                {changePage, level, setLevel, city, setCity, displayPage, idGuide, idExcursion}
             }>
-                <StartPage/>
+                <SwitchPage/>
             </IsraGuruContext.Provider>
         )
 }

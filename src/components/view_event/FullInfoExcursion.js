@@ -6,29 +6,30 @@ import Date from "../excursionBlock/Date";
 import Info from "../excursionBlock/Info";
 import {FaInfoCircle} from "react-icons/all";
 import {bannerData} from "../../json/bannerData";
-import style from "../../css_modules/button.module.css";
 import other from "../../css_modules/other.module.css";
 import MapContainer from "../../map/MapContainer";
 import {IsraGuruContext} from "../../utils/Context";
+import ButtonAccept from "../signup_event/ButtonAccept";
+import Logo from "../Logo";
 
 const FullInfoExcursion = () => {
-    const {changePage, idExcursion, idGuide} = useContext(IsraGuruContext);
+    const {idExcursion, idGuide} = useContext(IsraGuruContext);
     return (
         <div className={`${other.themeBack}`}>
             <div className='row'>
-                <div className='col-7 offset-3 mb-5 mt-5'>
+                <div className='col-3'>
+                    <Logo/>
+                </div>
+                <div className='col-7 mb-5 mt-5'>
                     <Guide guide={idGuide} id={idExcursion}/>
                 </div>
                 <div className='col-2 mb-5 mt-5'>
-                    <button className={`${style.btnBig}`} onClick={() => {
-                        changePage('signUp', idGuide, idExcursion)
-                    }}>Пойду
-                    </button>
+                   <ButtonAccept/>
                 </div>
             </div>
             {/*TODO*/}
             <div className='row'>
-                <div className='col-3 ml-5'>
+                <div className='col-3 marginPicture'>
                     <Image id={idExcursion}/>
                 </div>
                 <div className='col-8 border-bottom border-dark'>
@@ -42,7 +43,7 @@ const FullInfoExcursion = () => {
                 </div>
             </div>
             <div className='row'>
-                <div className='col-3 ml-5'>
+                <div className='col-3 ml-3 mr-5'>
                     <MapContainer/>
                 </div>
                 <div className='col-8 border-bottom border-dark'>
@@ -62,14 +63,11 @@ const FullInfoExcursion = () => {
                 <div className='col-2 offset-3'>
                     <Date/>
                 </div>
-                <div className='col-5'>
+                <div className='col-5 d-flex justify-content-center'>
                     <Info id={idExcursion}/>
                 </div>
                 <div className='col-2'>
-                    <button className={`${style.btnBig}`} onClick={() => {
-                        changePage('signUp', idGuide, idExcursion)
-                    }}>Пойду
-                    </button>
+                    <ButtonAccept/>
                 </div>
             </div>
         </div>

@@ -12,10 +12,10 @@ header input {
     color: #F8F8F8;
 }
 
-header label {
+header label, header p {
     color: #F8F8F8;
     font-style: italic;
-    margin-top: 6px;
+    margin-top: 1rem;
 }
 
 header, footer {
@@ -34,8 +34,8 @@ footer input {
     cursor: pointer;
 }
 
-label button:hover{
-    background:#dcc5a1;
+header button:hover {
+    background: #dcc5a1;
 }
 
 .popupList {
@@ -44,20 +44,51 @@ label button:hover{
     height: 20rem;
 }
 
-.popupList li:hover{
-    background:#dcc5a1;
+.popupList li:hover {
+    background: #dcc5a1;
 }
 
 .popupList li {
     list-style-type: none;
 }
 
-.popupHeader{
+.popupHeader {
     background-color: #dcc5a1;
     width: 35rem;
     height: 20rem;
 }
 
-.popupHeader h3{
+.popupHeader h3 {
     width: 10rem;
+}
+
+.logo {
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+
+.linkLogo:hover {
+    background-color: #4c4c4c;
+}
+
+.link:link {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.link:active {
+    color: black;
+}
+
+.link:hover {
+    color: black;
+}
+
+.link:visited {
+    color: black;
+}
+
+.marginPicture {
+    margin-left: 4rem;
 }
