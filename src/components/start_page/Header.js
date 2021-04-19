@@ -1,10 +1,9 @@
 import React from 'react';
 import style from "../../css_modules/button.module.css";
 import lang from "../../css_modules/header.module.css";
-import {FaSistrix} from "react-icons/all";
-import ModalLevel from "../../modal/ModalLevel";
-import ModalCity from "../../modal/ModalCity";
-import ModalCalendar from "../../modal/ModalCalendar";
+import ModalLevel from "../modal/ModalLevel";
+import ModalCity from "../modal/ModalCity";
+import ModalCalendar from "../modal/ModalCalendar";
 
 const Header = () => {
     return (
@@ -33,13 +32,12 @@ const Header = () => {
                     </label>
                 </div>
                 <div className='col-2'>
-                    <label className={`${lang.labelLanguage}`}>Язык
-                        <div className='d-flex flex-row'>
-                            <button className={`${style.btn} btn w-50 font-weight-bold pl-0 pb-0 mr-1`}>Все</button>
-                            <button className={`${style.btn} btn w-50 font-weight-bold pl-0 pb-0 mr-1`}>EN</button>
-                            <button className={`${style.btn} btn w-50 font-weight-bold pl-0 pb-0`}>RU</button>
-                        </div>
-                    </label>
+                    <p className='font-italic mb-0'>Язык</p>
+                    <div className={`${lang.labelLanguage} d-flex flex-row`}>
+                        <button className={`${style.btn} btn w-50 font-weight-bold pl-0 pb-0 mr-1`}>Все</button>
+                        <button className={`${style.btn} btn w-50 font-weight-bold pl-0 pb-0 mr-1`}>EN</button>
+                        <button className={`${style.btn} btn w-50 font-weight-bold pl-0 pb-0`}>RU</button>
+                    </div>
                 </div>
             </div>
         </header>

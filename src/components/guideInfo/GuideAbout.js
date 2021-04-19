@@ -6,8 +6,9 @@ import Button from "../excursionBlock/Button";
 import style from "../../css_modules/main.module.css";
 import other from "../../css_modules/other.module.css";
 import {guideInfo} from "../../json/guideInfo";
+import {bannerData} from "../../json/bannerData";
 
-const GuideAbout = ({idExcursion, idGuide}) => {
+const GuideAbout = ({idGuide}) => {
     return (
         <div>
             <h2 className={`${style.theme} font-weight-bold`}>{guideInfo[idGuide].name} {guideInfo[idGuide].surname}</h2>
@@ -16,19 +17,26 @@ const GuideAbout = ({idExcursion, idGuide}) => {
                 <h4 className='font-weight-bold'>Кто я </h4>
                 <p>{guideInfo[idGuide].description}</p>
                 <h4 className='font-weight-bold mb-5 mt-5'>Ближайшие экскурсии</h4>
-                {/*TODO*/}
-                {/*<Home/>*/}
-                <div className='row shadow mb-2 mr-2 ml-1 p-2'>
-                    <div className='col-9 p-0'>
-                        <Description id={idExcursion}/>
-                    </div>
-                    <div className='col-3 d-flex justify-content-center'>
-                        <div><Date/></div>
-                        <div className={`${other.bottom} mb-5`}>
-                            <Button guide={idGuide} id={idExcursion}/>
-                        </div>
-                    </div>
-                </div>
+                {
+                    Object.entries(bannerData).filter(k=>k[1].guide===idGuide).map(( key)=>{
+                        console.log(key[1].guide);
+                        return (
+                            <div className='row shadow mb-2 mr-2 ml-1 p-2'>
+                            <div className='col-9 p-0'>
+                                <Description key={key[0]} id={key[0]}/>
+                            </div>
+                            <div className='col-3 d-flex justify-content-center'>
+                                <div>
+                                    <Date/>
+                                </div>
+                                <div className={`${other.bottom} mb-5`}>
+                                    <Button guide={key[1].guide} id={key[0]}/>
+                                </div>
+                            </div>
+                            </div>
+                        )
+                    })
+                }
                 <h4 className='font-weight-bold mt-5'>Я могу</h4>
                 <div>Также в индивидуальном порядке могу провести экскурсии по следующим городам:
                     <ul className='mt-2'>{guideInfo[idGuide].cities.map(cities =>

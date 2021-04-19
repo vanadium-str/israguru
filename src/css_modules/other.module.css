@@ -4,11 +4,6 @@
     overflow: scroll;
     overflow-x: hidden;
 }
-
-.themeBack{
-    background-image: url("../images/back.jpg");
-}
-
 .top{
     position: relative;
 }
@@ -16,4 +11,7 @@
 .bottom{
     position: absolute;
     bottom: 1rem;
+}
+.themeBack{
+    background-image: url("../images/back.jpg");
 }

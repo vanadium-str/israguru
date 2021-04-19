@@ -6,10 +6,14 @@ import Guide from "../excursionBlock/Guide";
 import Info from "../excursionBlock/Info";
 import Button from "../excursionBlock/Button";
 import other from "../../css_modules/other.module.css";
+import styled from "styled-components";
 
-const Main = ({id, guide}) => {
+const StyledMain = styled.div`
+  min-height: ${props=>70/props.size}vh
+`;
+const Main = ({id, guide, size}) => {
     return (
-        <div className='container-fluid'>
+        <StyledMain className='container-fluid' size={size}>
             <div className='row shadow mb-3'>
                 <div className='col-8'>
                     <div className='d-flex justify-content-between'>
@@ -19,9 +23,9 @@ const Main = ({id, guide}) => {
                 </div>
                 <div className='col-2'>
                     <Date/>
-                            <div className={`row ${other.bottom}`}>
-                                <Guide guide={guide} id={id}/>
-                            </div>
+                    <div className={`row ${other.bottom}`}>
+                        <Guide guide={guide} id={id}/>
+                    </div>
 
                 </div>
                 <div className='col-2'>
@@ -31,7 +35,7 @@ const Main = ({id, guide}) => {
                     </div>
                 </div>
             </div>
-        </div>
+        </StyledMain>
     );
 };
 

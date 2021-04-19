@@ -2,7 +2,8 @@ import React from 'react';
 import style from "../../css_modules/main.module.css";
 import other from "../../css_modules/other.module.css";
 
-const Date = () => {
+
+const Date = ({guide}) => {
     return (
         <div className={`row ${other.top}`}>
             {/*{TODO => take DATE from JSON bannerData}*/}

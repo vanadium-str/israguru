@@ -12,10 +12,10 @@ header input {
     color: #F8F8F8;
 }
 
-header label {
+header label,header p {
     color: #F8F8F8;
     font-style: italic;
-    margin-top: 6px;
+    margin-top: 1rem;
 }
 
 header, footer {
@@ -34,7 +34,23 @@ footer input {
     cursor: pointer;
 }
 
-label button:hover{
+.test:link {
+    text-decoration: none;
+    color: black;
+    /*margin: 0;*/
+    padding: 0;
+}
+.test:active {
+    color: black;
+}
+
+.test:hover{
+    color:black;
+}
+.test:visited{
+    color: black;
+}
+header button:hover{
     background:#dcc5a1;
 }
 
@@ -60,4 +76,19 @@ label button:hover{
 
 .popupHeader h3{
     width: 10rem;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--in-selecting-range,
+.react-datepicker__day--in-range,
+.react-datepicker__month-text--selected,
+.react-datepicker__month-text--in-selecting-range,
+.react-datepicker__month-text--in-range,
+.react-datepicker__quarter-text--selected,
+.react-datepicker__quarter-text--in-selecting-range,
+.react-datepicker__quarter-text--in-range, 
+.react-datepicker__year-text--selected,
+.react-datepicker__year-text--in-selecting-range,
+.react-datepicker__year-text--in-range{
+    background-color:#dcc5a1 !important
 }

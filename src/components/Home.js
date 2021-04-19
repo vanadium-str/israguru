@@ -1,41 +1,42 @@
 import React from 'react';
-import Header from "./start_page/Header";
-import Footer from "./start_page/Footer";
-import Main from "./start_page/Main";
 import {bannerData} from "../json/bannerData";
+import ErrorSearch from "./error/ErrorSearch";
+import ViewPage from "./ViewPage";
 
-const Home = ({level}) => {
-    const obj = Object.entries(bannerData);
-    let res = obj.find(k => k[1].level === level);
-    if (level === '' || !res)
+const Home = ({level, city}) => {
+    let selectedCity = Object.entries(bannerData).filter(k=>k[1].city.includes(city));
+    let selectedByCityByLevel = selectedCity.filter(k=>k[1].level.includes(level));
+    let selectedLevel = Object.entries(bannerData).filter(k =>k[1].level.includes(level));
+    console.log(selectedCity);
+    console.log(selectedLevel);
+    console.log(selectedByCityByLevel);
+
+    if (city === '' && level === '') {
+        console.log('1');
         return (
-            <div>
-                <Header/>
-                {Object.entries(bannerData).map((data) => {
-                    return (
-                        <Main
-                            key={data[0]}
-                            id={data[0]}
-                            guide={data[1].guide}
-                        />
-                    );
-                })}
-                <Footer/>
-            </div>);
-    else return (
-        <div>
-            <Header/>
-            {obj.filter(k => k[1].level === level).map((data) => {
-                return (
-                    <Main
-                        key={data[0]}
-                        id={data[0]}
-                        guide={data[1].guide}
-                    />
-                );
-            })}
-            <Footer/>
-        </div>
+                <ViewPage data={Object.entries(bannerData)}/>
+        );
+    }
+    if(selectedByCityByLevel.length){
+            return (
+                <ViewPage data={selectedByCityByLevel}/>
+            );
+    }
+    if (selectedLevel.length && !city) {
+        console.log('3');
+        return (
+            <ViewPage data={selectedLevel}/>
+        );
+    }
+    if (selectedCity.length && !level) {
+        console.log('4');
+        return (
+            <ViewPage data={selectedCity}/>
+        );
+    }
+    return (
+        <ErrorSearch/>
     );
 }
+
 export default Home;

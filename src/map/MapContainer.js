@@ -5,6 +5,8 @@ class MapContainer extends Component {
     constructor(props) {
         super(props);
         this.state={
+            // latitude: 32.0808800,
+            // longitude: 34.7805700,
             events: [
                 {
                     latitude: 32.0808800,
@@ -35,5 +37,5 @@ class MapContainer extends Component {
     }
 }
 export default GoogleApiWrapper({
-    apiKey: 'key'
+    apiKey: 'AIzaSyAJ8W9ZFoibPXr1H_FcdmUsBQP9Wzglh-Q'
 })(MapContainer);

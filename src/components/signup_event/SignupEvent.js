@@ -8,6 +8,8 @@ import style from "../../css_modules/main.module.css";
 import button from "../../css_modules/button.module.css";
 import other from "../../css_modules/other.module.css";
 import sign from "../../css_modules/signUpEvent.module.css";
+import {Link} from "react-router-dom";
+import {guideInfo} from "../../utils/constants";
 
 
 const SignupEvent = ({idExcursion, idGuide}) => {
@@ -27,7 +29,9 @@ const SignupEvent = ({idExcursion, idGuide}) => {
                 </div>
                 <div className='col-2'>
                     <Date/>
-                    <div className={`${other.bottom}`}><Guide id={idExcursion} guide={idGuide}/></div>
+                    <div className={`${other.bottom}`}>
+                        <Guide id={idExcursion} guide={idGuide}/>
+                    </div>
                 </div>
                 <div className='col-2 mt-5'>
                     <Info id={idExcursion}/>
