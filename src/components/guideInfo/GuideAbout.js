@@ -44,7 +44,7 @@ const GuideAbout = ({idGuide}) => {
                     </ul>
                 </div>
                 <h4 className='font-weight-bold mt-5'>Связаться со мной</h4>
-                <p className='mb-2'>Телефон: 11111111111</p>
+                <p className='mb-2'>Телефон: {guideInfo[idGuide].phone}</p>
                 <p className='mb-2'>Соцсети и мессенджеры</p>
                 <div className='mb-5'>
                     <FaTelegram/>

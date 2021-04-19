@@ -12,7 +12,7 @@ header input {
     color: #F8F8F8;
 }
 
-header label,header p {
+header label, header p {
     color: #F8F8F8;
     font-style: italic;
     margin-top: 1rem;
@@ -34,24 +34,8 @@ footer input {
     cursor: pointer;
 }
 
-.test:link {
-    text-decoration: none;
-    color: black;
-    /*margin: 0;*/
-    padding: 0;
-}
-.test:active {
-    color: black;
-}
-
-.test:hover{
-    color:black;
-}
-.test:visited{
-    color: black;
-}
-header button:hover{
-    background:#dcc5a1;
+header button:hover {
+    background: #dcc5a1;
 }
 
 .popupList {
@@ -60,35 +44,51 @@ header button:hover{
     height: 20rem;
 }
 
-.popupList li:hover{
-    background:#dcc5a1;
+.popupList li:hover {
+    background: #dcc5a1;
 }
 
 .popupList li {
     list-style-type: none;
 }
 
-.popupHeader{
+.popupHeader {
     background-color: #dcc5a1;
     width: 35rem;
     height: 20rem;
 }
 
-.popupHeader h3{
+.popupHeader h3 {
     width: 10rem;
 }
 
-.react-datepicker__day--selected,
-.react-datepicker__day--in-selecting-range,
-.react-datepicker__day--in-range,
-.react-datepicker__month-text--selected,
-.react-datepicker__month-text--in-selecting-range,
-.react-datepicker__month-text--in-range,
-.react-datepicker__quarter-text--selected,
-.react-datepicker__quarter-text--in-selecting-range,
-.react-datepicker__quarter-text--in-range, 
-.react-datepicker__year-text--selected,
-.react-datepicker__year-text--in-selecting-range,
-.react-datepicker__year-text--in-range{
-    background-color:#dcc5a1 !important
+.logo {
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+
+.linkLogo:hover {
+    background-color: #4c4c4c;
+}
+
+.link:link {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.link:active {
+    color: black;
+}
+
+.link:hover {
+    color: black;
+}
+
+.link:visited {
+    color: black;
+}
+
+.marginPicture {
+    margin-left: 4rem;
 }

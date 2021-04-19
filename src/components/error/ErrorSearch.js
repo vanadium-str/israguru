@@ -8,10 +8,10 @@ const ErrorSearch = () => {
         <div>
             <Header/>
             <div className='text-center m-5'>
-                <img src={errorImg} alt='error' width='20%'/>
-                <h3 className=''>По Вашему запросу ничего не нашлось</h3>
+            <img src={errorImg} alt='error' width='20%'/>
+            <h3 className=''>По Вашему запросу ничего не нашлось</h3>
             </div>
-            <div className='fixed-bottom m-3'><Footer/></div>
+           <div className='fixed-bottom m-3'><Footer/></div>
         </div>
     );
 };

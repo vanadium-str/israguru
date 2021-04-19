@@ -13,13 +13,17 @@ import {IsraGuruContext} from "../../utils/Context";
 import {guideInfo, signUpEvent} from "../../utils/constants";
 import {Link} from "react-router-dom";
 import ButtonAccept from "../signup_event/ButtonAccept";
+import Logo from "../Logo";
 
 const FullInfoExcursion = (props) => {
     let keyExcursion = props.match.params.idExcursion;
     return (
         <div className={`${other.themeBack}`}>
             <div className='row'>
-                <div className='col-7 offset-3 mb-5 mt-5'>
+                <div className='col-3'>
+                    <Logo/>
+                </div>
+                <div className='col-7 mb-5 mt-5'>
                     <Guide guide={bannerData[keyExcursion].guide} id={keyExcursion}/>
                 </div>
                 <div className='col-2 mb-5 mt-5'>
@@ -27,7 +31,7 @@ const FullInfoExcursion = (props) => {
                 </div>
             </div>
             <div className='row'>
-                <div className='col-3 ml-5'>
+                <div className='col-3 ml-5 marginPicture'>
                     <Image id={keyExcursion}/>
                 </div>
                 <div className='col-8 border-bottom border-dark'>
@@ -42,7 +46,7 @@ const FullInfoExcursion = (props) => {
                 </div>
             </div>
             <div className='row'>
-                <div className='col-3 ml-5'>
+                <div className='col-3 ml-3 mr-5'>
                     {/*<MapContainer/>*/}
                 </div>
                 <div className='col-8 border-bottom border-dark'>
@@ -65,7 +69,7 @@ const FullInfoExcursion = (props) => {
                 <div className='col-2 offset-3'>
                     <Date/>
                 </div>
-                <div className='col-5'>
+                <div className='col-5 d-flex justify-content-center'>
                     <Info id={keyExcursion}/>
                 </div>
                 <ButtonAccept/>

@@ -8,12 +8,12 @@ import {Link} from "react-router-dom";
 const Guide = ({guide, id}) => {
     const {changePage} = useContext(IsraGuruContext);
     return (
-            <div className='row '>
+            <div className='row no-gutters'>
                 <img className={`${style.imgGuide} mr-2 rounded-circle`} src={guideInfo[guide].imgGuide}
                      alt='guide'/>
                 <div>
                     <p className='small mb-0'>Ваш гид:</p>
-                    <Link className='cursor test' to={`/${guidePath}/${guide}`} onClick={() => {
+                    <Link className='link' to={`/${guidePath}/${guide}`} onClick={() => {
                         changePage(guidePath, guide, id)
                     }}>{guideInfo[guide].name}  {guideInfo[guide].surname}</Link>
                 </div>

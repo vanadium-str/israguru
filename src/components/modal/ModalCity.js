@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
 import Popup from "reactjs-popup";
-import styled from 'styled-components';
+import styled from "styled-components";
 import {IsraGuruContext} from "../../utils/Context";
 import {cities} from "../../utils/constants";
 
@@ -11,7 +11,7 @@ const StyledPopup = styled(Popup)`
 `;
 
 const ModalCity = () => {
-    const {city, setCity} = useContext(IsraGuruContext);
+    const {setCity, city} = useContext(IsraGuruContext);
     return (
         <StyledPopup
             trigger={<input className='w-75 d-flex flex-row cursor' type='text' placeholder='Тель Авив Яффо' value={city}/>}
@@ -24,14 +24,9 @@ const ModalCity = () => {
                 </div>
                 <div className='popupList'>
                     <ul className='mt-4'>
-                        <li className='cursor mb-2' value={city} onClick={()=>{setCity('')}}>Все</li>
                         {cities.map((item, key)=>
-                            <li
-                                key={key}
-                                value={city}
-                                className='cursor mb-2'
-                                onClick={()=>setCity(item)}
-                            >{item}</li>)}
+                            <li key={key} className='cursor mb-2' value={city} onClick={()=>{setCity(item)}}>{item}</li>
+                        )}
                     </ul>
                 </div>
             </div>
