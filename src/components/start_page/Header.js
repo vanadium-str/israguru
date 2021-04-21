@@ -1,9 +1,10 @@
 import React from 'react';
 import style from "../../css_modules/button.module.css";
 import lang from "../../css_modules/header.module.css";
-import ModalLevel from "../modal/ModalLevel";
-import ModalCity from "../modal/ModalCity";
-import ModalCalendar from "../modal/ModalCalendar";
+import SearchLevel from "../search/SearchLevel";
+import SearchCity from "../search/SearchCity";
+import Calendar from "../search/Calendar";
+import SearchPage from "../search/SearchPage";
 
 const Header = () => {
     return (
@@ -11,24 +12,24 @@ const Header = () => {
             <header className='row mb-3 ml-4'>
                 <div className='col-3'>
                     <label>Поиск
-                        <input className='w-100' type='search' placeholder='&#128269; Название, гид, другое'/>
+                        <SearchPage/>
                     </label>
                 </div>
                 <div className='col-3'>
                     <label>Дата
                         <div className='d-flex flex-row'>
-                            <ModalCalendar/>
+                            <Calendar/>
                         </div>
                     </label>
                 </div>
                 <div className='col-2'>
                     <label>Место
-                        <ModalCity/>
+                        <SearchCity/>
                     </label>
                 </div>
                 <div className='col-2'>
                     <label>Уровень
-                        <ModalLevel/>
+                        <SearchLevel/>
                     </label>
                 </div>
                 <div className='col-2'>

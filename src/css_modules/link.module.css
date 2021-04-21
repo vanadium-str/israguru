@@ -1,0 +1,26 @@
+.logo {
+    margin-left: 5rem;
+    margin-top: 1rem;
+}
+
+.linkLogo:hover {
+    background-color: #4c4c4c;
+}
+
+.link:link {
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.link:active {
+    color: black;
+}
+
+.link:hover {
+    color: black;
+}
+
+.link:visited {
+    color: black;
+}

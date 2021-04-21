@@ -10,6 +10,8 @@ const App = () => {
     const [idExcursion, setIdExcursion] = useState('');
     const [level, setLevel] = useState('');
     const [city, setCity] = useState('');
+    const [keyword, setKeyword] = useState('');
+    const [search, setSearch] = useState(false);
 
     const changePage = (page, guide, id) => {
         setDisplayPage(page);
@@ -19,7 +21,7 @@ const App = () => {
 
     return (
         <IsraGuruContext.Provider value={
-            {changePage, level, setLevel, displayPage, idGuide, idExcursion, city, setCity}
+            {changePage, level, setLevel, displayPage, idGuide, idExcursion, city, setCity, keyword, setKeyword, search, setSearch}
         }>
             <SwitchPage/>
         </IsraGuruContext.Provider>

@@ -1,42 +1,24 @@
 import React from 'react';
+import FindByLevelAndCity from "./FindByLevelAndCity";
 import {bannerData} from "../json/bannerData";
+import ViewStartPage from "./ViewStartPage";
 import ErrorSearch from "./error/ErrorSearch";
-import ViewPage from "./ViewPage";
 
-const Home = ({level, city}) => {
-    let selectedCity = Object.entries(bannerData).filter(k=>k[1].city.includes(city));
-    let selectedByCityByLevel = selectedCity.filter(k=>k[1].level.includes(level));
-    let selectedLevel = Object.entries(bannerData).filter(k =>k[1].level.includes(level));
-    console.log(selectedCity);
-    console.log(selectedLevel);
-    console.log(selectedByCityByLevel);
-
-    if (city === '' && level === '') {
-        console.log('1');
+const Home = ({level, city, keyword, search}) => {
+    let inputKeyword = Object.entries(bannerData).filter(k=>k[1].city.includes(keyword));
+    if (search) {
         return (
-                <ViewPage data={Object.entries(bannerData)}/>
+            <div>
+                {inputKeyword.length ? <ViewStartPage data={inputKeyword}/> : <ErrorSearch/>}
+            </div>
+        )
+    } else {
+        return (
+            <div>
+                <FindByLevelAndCity level={level} city={city}/>
+            </div>
         );
     }
-    if(selectedByCityByLevel.length){
-            return (
-                <ViewPage data={selectedByCityByLevel}/>
-            );
-    }
-    if (selectedLevel.length && !city) {
-        console.log('3');
-        return (
-            <ViewPage data={selectedLevel}/>
-        );
-    }
-    if (selectedCity.length && !level) {
-        console.log('4');
-        return (
-            <ViewPage data={selectedCity}/>
-        );
-    }
-    return (
-        <ErrorSearch/>
-    );
-}
+};
 
 export default Home;

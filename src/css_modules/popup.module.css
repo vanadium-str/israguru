@@ -1,0 +1,23 @@
+.popupList {
+    background-color: #F8F8F8;
+    width: 20rem;
+    height: 20rem;
+}
+
+.popupList li:hover {
+    background: #dcc5a1;
+}
+
+.popupList li {
+    list-style-type: none;
+}
+
+.popupHeader {
+    background-color: #dcc5a1;
+    width: 35rem;
+    height: 20rem;
+}
+
+.popupHeader h3 {
+    width: 10rem;
+}

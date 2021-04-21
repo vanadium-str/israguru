@@ -2,8 +2,9 @@ import Popup from "reactjs-popup";
 import {useContext} from "react";
 import {IsraGuruContext} from "../../utils/Context";
 import {levels} from "../../utils/constants";
+import style from "../../css_modules/popup.module.css";
 
-const ModalLevel = () => {
+const SearchLevel = () => {
     const {setLevel, level} = useContext(IsraGuruContext);
     return (
     <Popup
@@ -13,10 +14,10 @@ const ModalLevel = () => {
     >
 
         <div className='d-flex justify-content-center'>
-            <div className='popupHeader d-flex justify-content-end'>
+            <div className={`${style.popupHeader} d-flex justify-content-end`}>
                 <h3 className='font-weight-bold mt-4'>Уровень сложности материала</h3>
             </div>
-            <div className='popupList'>
+            <div className={`${style.popupList}`}>
                 <ul className='mt-4'>
                     <li className='cursor mb-2' value={level} onClick={()=>{setLevel('')}}>Показать все</li>
                     {levels.map((item, key) =>
@@ -29,4 +30,4 @@ const ModalLevel = () => {
     );
 };
 
-export default ModalLevel;
+export default SearchLevel;

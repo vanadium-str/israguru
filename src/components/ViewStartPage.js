@@ -3,7 +3,7 @@ import Header from "./start_page/Header";
 import Footer from "./start_page/Footer";
 import Main from "./start_page/Main";
 
-const ViewPage = ({data}) => {
+const ViewStartPage = ({data}) => {
     return (
         <div>
             <Header/>
@@ -22,4 +22,4 @@ const ViewPage = ({data}) => {
     );
 };
 
-export default ViewPage;
+export default ViewStartPage;

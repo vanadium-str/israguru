@@ -2,13 +2,14 @@ import React from 'react';
 import logo from "../images/logo.png";
 import {homePage} from "../utils/constants";
 import {Link} from "react-router-dom";
+import link from "../css_modules/link.module.css";
 
 const Logo = () => {
     return (
-        <Link className='linkLogo' to={`/${homePage}`}>
-            <img className='logo' src={logo} alt='logo' width='100rem'/>
+        <Link className={`${link.linkLogo}`} to={`/${homePage}`}>
+            <img className={`${link.logo}`} src={logo} alt='logo' width='100rem'/>
         </Link>
     );
-};
+}
 
 export default Logo;

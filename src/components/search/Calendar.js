@@ -3,7 +3,7 @@ import  DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 // import './App.css';
 
-const ModalCalendar = () => {
+const Calendar = () => {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     return (
@@ -27,4 +27,4 @@ const ModalCalendar = () => {
     );
 };
 
-export default ModalCalendar;
+export default Calendar;

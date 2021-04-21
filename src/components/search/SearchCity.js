@@ -3,6 +3,7 @@ import Popup from "reactjs-popup";
 import styled from "styled-components";
 import {IsraGuruContext} from "../../utils/Context";
 import {cities} from "../../utils/constants";
+import style from "../../css_modules/popup.module.css";
 
 const StyledPopup = styled(Popup)`
   &-content {
@@ -10,7 +11,7 @@ const StyledPopup = styled(Popup)`
   }
 `;
 
-const ModalCity = () => {
+const SearchCity = () => {
     const {setCity, city} = useContext(IsraGuruContext);
     return (
         <StyledPopup
@@ -19,11 +20,12 @@ const ModalCity = () => {
             on='hover'
         >
             <div className='d-flex justify-content-center'>
-                <div className='popupHeader d-flex justify-content-end'>
+                <div className={`${style.popupHeader} d-flex justify-content-end`}>
                     <h3 className='font-weight-bold mt-4 mr-5'>Топ популярных направлений</h3>
                 </div>
-                <div className='popupList'>
+                <div className={`${style.popupList}`}>
                     <ul className='mt-4'>
+                        <li className='cursor mb-2' value={city} onClick={()=>{setCity('')}}>Показать все</li>
                         {cities.map((item, key)=>
                             <li key={key} className='cursor mb-2' value={city} onClick={()=>{setCity(item)}}>{item}</li>
                         )}
@@ -34,4 +36,4 @@ const ModalCity = () => {
     );
 };
 
-export default ModalCity;
+export default SearchCity;
