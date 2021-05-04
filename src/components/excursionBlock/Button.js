@@ -1,18 +1,13 @@
 import React, {useContext} from 'react';
-import {IsraGuruContext} from "../../utils/Context";
+import {IsraGuruContext} from "../../utils/сontext";
 import style from "../../css_modules/button.module.css";
 import {fullInfo} from "../../utils/constants";
 import {Link} from "react-router-dom";
 
-const Button = ({id, guide}) => {
-    const {changePage} = useContext(IsraGuruContext);
+const Button = ({id}) => {
     return (
-        <Link to={`/${fullInfo}/${id}`}>
-            <button className={`${style.btnBig}`}  onClick={() => {
-                changePage(fullInfo, guide, id)
-                console.log(guide, id);
-            }}>Подробнее
-            </button>
+        <Link to={`/${fullInfo}/${id}`} className={`${style.btnBig}`}>
+            Подробнее
         </Link>
     );
 };

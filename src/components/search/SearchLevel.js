@@ -1,6 +1,6 @@
 import Popup from "reactjs-popup";
 import {useContext} from "react";
-import {IsraGuruContext} from "../../utils/Context";
+import {IsraGuruContext} from "../../utils/сontext";
 import {levels} from "../../utils/constants";
 import style from "../../css_modules/popup.module.css";
 

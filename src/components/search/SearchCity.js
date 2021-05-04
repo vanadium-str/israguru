@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import Popup from "reactjs-popup";
 import styled from "styled-components";
-import {IsraGuruContext} from "../../utils/Context";
+import {IsraGuruContext} from "../../utils/сontext";
 import {cities} from "../../utils/constants";
 import style from "../../css_modules/popup.module.css";
 

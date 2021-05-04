@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import {IsraGuruContext} from "../../utils/Context";
+import {IsraGuruContext} from "../../utils/сontext";
 
 const SearchPage = () => {
     const {keyword, setKeyword, setSearch} = useContext(IsraGuruContext);

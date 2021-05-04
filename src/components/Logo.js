@@ -1,8 +1,8 @@
 import React from 'react';
 import logo from "../images/logo.png";
+import link from "../css_modules/link.module.css";
 import {homePage} from "../utils/constants";
 import {Link} from "react-router-dom";
-import link from "../css_modules/link.module.css";
 
 const Logo = () => {
     return (

@@ -1,14 +1,16 @@
 import React from 'react';
 import {FaFacebookMessenger, FaTelegram, FaViber} from "react-icons/fa";
 import Description from "../excursionBlock/Description";
-import Date from "../excursionBlock/Date";
+import DateOfExcursion from "../excursionBlock/DateOfExcursion";
 import Button from "../excursionBlock/Button";
 import style from "../../css_modules/main.module.css";
 import other from "../../css_modules/other.module.css";
 import {guideInfo} from "../../json/guideInfo";
 import {bannerData} from "../../json/bannerData";
+import {cities, excursionData} from "../../utils/constants";
 
 const GuideAbout = ({idGuide}) => {
+    const guideExcursions = excursionData.filter(k=>k[1].guide===idGuide);
     return (
         <div>
             <h2 className={`${style.theme} font-weight-bold`}>{guideInfo[idGuide].name} {guideInfo[idGuide].surname}</h2>
@@ -18,8 +20,7 @@ const GuideAbout = ({idGuide}) => {
                 <p>{guideInfo[idGuide].description}</p>
                 <h4 className='font-weight-bold mb-5 mt-5'>Ближайшие экскурсии</h4>
                 {
-                    Object.entries(bannerData).filter(k=>k[1].guide===idGuide).map(( key)=>{
-                        console.log(key[1].guide);
+                    guideExcursions.map(( key)=>{
                         return (
                             <div className='row shadow mb-2 mr-2 ml-1 p-2'>
                             <div className='col-9 p-0'>
@@ -27,7 +28,7 @@ const GuideAbout = ({idGuide}) => {
                             </div>
                             <div className='col-3 d-flex justify-content-center'>
                                 <div>
-                                    <Date/>
+                                    <DateOfExcursion id={key[0]}/>
                                 </div>
                                 <div className={`${other.bottom} mb-5`}>
                                     <Button guide={key[1].guide} id={key[0]}/>
@@ -39,6 +40,7 @@ const GuideAbout = ({idGuide}) => {
                 }
                 <h4 className='font-weight-bold mt-5'>Я могу</h4>
                 <div>Также в индивидуальном порядке могу провести экскурсии по следующим городам:
+                    {/*{TODO}*/}
                     <ul className='mt-2'>{guideInfo[idGuide].cities.map(cities =>
                         <li key={cities}>{cities}</li>)}
                     </ul>

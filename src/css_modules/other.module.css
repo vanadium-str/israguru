@@ -4,14 +4,12 @@
     overflow: scroll;
     overflow-x: hidden;
 }
-.top{
-    position: relative;
-}
 
 .bottom{
     position: absolute;
-    bottom: 1rem;
+    bottom: 0.5rem;
 }
 .themeBack{
     background-image: url("../images/back.jpg");
+    min-height: 100vh;
 }

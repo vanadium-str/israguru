@@ -1,28 +1,35 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import  DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import {IsraGuruContext} from "../../utils/сontext";
 // import './App.css';
 
 const Calendar = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+    const {startDate, setStartDate, endDate, setEndDate} = useContext(IsraGuruContext);
+    const setDate = (start, end) => {
+        return start > end ? new Date() : setStartDate(start);
+    };
     return (
         <>
-            <DatePicker
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-                selectsStart
-                startDate={startDate}
-                endDate={endDate}
-            />
-            <DatePicker
-                selected={endDate}
-                onChange={date => setEndDate(date)}
-                selectsEnd
-                startDate={startDate}
-                endDate={endDate}
-                minDate={startDate}
-            />
+            <div className='mr-3'>
+                <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setDate(date,endDate)}
+                    selectsStart
+                    startDate={startDate}
+                    endDate={endDate}
+                />
+            </div>
+            <div>
+                <DatePicker
+                    selected={endDate}
+                    onChange={date => setEndDate(date)}
+                    selectsEnd
+                    startDate={startDate}
+                    endDate={endDate}
+                    minDate={startDate}
+                />
+            </div>
         </>
     );
 };

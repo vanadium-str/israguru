@@ -1,21 +1,35 @@
-import React from 'react';
-import FindByLevelAndCity from "./FindByLevelAndCity";
+import React, {useContext} from 'react';
+import FindByLevelAndCity from "./search/FindByLevelAndCity";
 import {bannerData} from "../json/bannerData";
 import ViewStartPage from "./ViewStartPage";
 import ErrorSearch from "./error/ErrorSearch";
+import {excursionData, findByDate} from "../utils/constants";
+import {IsraGuruContext} from "../utils/сontext";
+import {guideInfo} from "../json/guideInfo";
 
-const Home = ({level, city, keyword, search}) => {
-    let inputKeyword = Object.entries(bannerData).filter(k=>k[1].city.includes(keyword));
+const Home = () => {
+    const {keyword, search, language} = useContext(IsraGuruContext);
+    const inputKeyword = excursionData.filter(k=>guideInfo[k[1].guide].name.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
+        || guideInfo[k[1].guide].surname.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
+        || k[1].city.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase()));
     if (search) {
         return (
-            <div>
-                {inputKeyword.length ? <ViewStartPage data={inputKeyword}/> : <ErrorSearch/>}
-            </div>
+                <ViewStartPage data={inputKeyword}/>
         )
-    } else {
+    }
+    if(!language){
         return (
             <div>
-                <FindByLevelAndCity level={level} city={city}/>
+                {console.log('Lan')}
+                <FindByLevelAndCity/>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div>
+                {console.log('default')}
+                <FindByLevelAndCity/>
             </div>
         );
     }

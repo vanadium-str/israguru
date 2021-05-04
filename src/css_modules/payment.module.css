@@ -1,0 +1,28 @@
+/*====================PAYMENT=======================*/
+.row {
+    /*display: -ms-flexbox; !* IE10 *!*/
+    display: flex;
+    /*-ms-flex-wrap: wrap; !* IE10 *!*/
+    flex-wrap: wrap;
+}
+
+.col-50 {
+    /*-ms-flex: 50%; !* IE10 *!*/
+    flex: 50%;
+}
+.inputStyle {
+    width: 50%;
+    margin-bottom: 20px;
+    /*padding: 12px;*/
+    border: 1px solid #dcc5a1;
+    border-radius: 3px;
+}
+
+.labelStyle {
+    margin-bottom: 10px;
+    display: block;
+}
+.svg svg {
+    height: 2rem;
+    width: 2rem;
+}

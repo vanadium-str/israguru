@@ -4,6 +4,7 @@
     width: 155px;
     height: 40px;
     border-radius: 20px;
+    text-align: center;
 }
 
 .btnGo{
@@ -12,5 +13,20 @@
 }
 
 .btn {
+    color: #F8F8F8;
+}
+
+.btnWhite {
+    background-color: transparent;
+    color: #4c4c4c;
+    width: 155px;
+    height: 40px;
+    border-radius: 20px;
+}
+.btnBig:link{
+    text-decoration: none;
+}
+.btnBig:hover{
+    background-color: #4c4c4c;
     color: #F8F8F8;
 }
