@@ -2,7 +2,6 @@ import React, {useContext, useState} from 'react';
 import  DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import {IsraGuruContext} from "../../utils/сontext";
-// import './App.css';
 
 const Calendar = () => {
     const {startDate, setStartDate, endDate, setEndDate} = useContext(IsraGuruContext);

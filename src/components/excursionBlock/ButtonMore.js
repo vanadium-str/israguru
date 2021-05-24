@@ -1,15 +1,15 @@
 import React, {useContext} from 'react';
 import {IsraGuruContext} from "../../utils/сontext";
-import style from "../../css_modules/button.module.css";
+import button from "../../css_modules/button.module.css";
 import {fullInfo} from "../../utils/constants";
 import {Link} from "react-router-dom";
 
-const Button = ({id}) => {
+const ButtonMore = ({id}) => {
     return (
-        <Link to={`/${fullInfo}/${id}`} className={`${style.btnBig}`}>
+        <Link to={`/${fullInfo}/${id}`} className={`${button.btnBig}`}>
             Подробнее
         </Link>
     );
 };
 
-export default Button;
+export default ButtonMore;

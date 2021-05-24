@@ -1,3 +1,11 @@
+.logo {
+    margin-top: 1rem;
+}
+
+.linkBlack:hover {
+    background-color: inherit;
+}
+
 .link:link {
     text-decoration: none;
     color: black;
@@ -5,19 +13,10 @@
 }
 
 .link:hover {
-    background-color: #F8F8F8;
     color: black;
+    background-color: inherit;
 }
 
 .link:visited {
     color: black;
-}
-
-.linkLogo:hover {
-    background-color: #4c4c4c;
-}
-
-.logo {
-    margin-left: 5rem;
-    margin-top: 1rem;
 }

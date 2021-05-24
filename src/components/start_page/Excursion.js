@@ -4,7 +4,7 @@ import Description from "../excursionBlock/Description";
 import DateOfExcursion from "../excursionBlock/DateOfExcursion";
 import Guide from "../excursionBlock/Guide";
 import Info from "../excursionBlock/Info";
-import Button from "../excursionBlock/Button";
+import ButtonMore from "../excursionBlock/ButtonMore";
 import other from "../../css_modules/other.module.css";
 import styled from "styled-components";
 
@@ -14,6 +14,7 @@ const StyledExcursion = styled.div`
 const Excursion = ({id, guide, size}) => {
     return (
         <StyledExcursion className='container-fluid' size={size}>
+
             <div className='row shadow mb-3'>
                 <div className='col-8'>
                     <div className='d-flex justify-content-between'>
@@ -25,6 +26,7 @@ const Excursion = ({id, guide, size}) => {
                         </div>
                     </div>
                 </div>
+
                 <div className='col-2'>
                     <div className='container'>
                         <DateOfExcursion id={id}/>
@@ -33,12 +35,14 @@ const Excursion = ({id, guide, size}) => {
                         <Guide guide={guide} id={id}/>
                     </div>
                 </div>
+
                 <div className='col-2'>
                     <Info id={id}/>
                     <div className={`${other.bottom}`}>
-                        <Button guide={guide} id={id}/>
+                        <ButtonMore guide={guide} id={id}/>
                     </div>
                 </div>
+
             </div>
         </StyledExcursion>
     );

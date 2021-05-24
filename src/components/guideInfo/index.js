@@ -8,13 +8,13 @@ const Index = (props) => {
     let keyGuide = props.match.params.idGuide;
     return (
         <div className={`container-fluid ${other.themeBack}`}>
-            <div className='row'>
-                <div className='col-3'>
-                    <Logo/>
-                    <img className='rounded-circle w-100 ml-3 mt-2'
-                         src={guideInfo[keyGuide].imgGuide} alt='guide'/>
+            <div className='row'><Logo/></div>
+            <div className='d-flex justify-content-around'>
+                <div className='mt-5'>
+                    <img className='rounded-circle'
+                         src={guideInfo[keyGuide].imgGuide} alt='guide' width='300'/>
                 </div>
-                <div className='col-9 mt-5 d-flex justify-content-around'>
+                <div>
                     <GuideAbout idGuide={keyGuide}/>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import {bannerData} from "../json/bannerData";
+import {excursionData} from "../json/excursionData";
 
 export const levels = [
     'Турист (Обзорная экскурсия)','Местный (Тематическая экскурсия)','Гуру (Специальная экскурсия)'
@@ -28,7 +28,9 @@ export const time = (time)=>{
 
 export const optionsDay ={
     weekday: 'long'};
-export const months = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
+export const months = ['января','февраля',
+    'марта','апреля','мая','июня','июля',
+    'августа','сентября','октября','ноября','декабря'];
 
 export function getDayExcursion(date) {
     return new Intl.DateTimeFormat('ru-RU', optionsDay).format(date);
@@ -41,9 +43,9 @@ export function findByDate (dateOfExcursion, start, end) {
     const startDate = new Date(start).getTime();
     const endDate = new Date(end).getTime();
 
-    if(startDate<endDate&& date > startDate && date <endDate){
+    if(date >= startDate && date <= endDate){
         return 1;
     }else return console.log('not found');
 }
 
-export const excursionData = Object.entries(bannerData);
+export const excursions = Object.entries(excursionData);

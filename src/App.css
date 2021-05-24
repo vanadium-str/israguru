@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap');
-
 header input {
     width: 8rem;
     height: 2rem;
@@ -12,6 +11,10 @@ header input {
     color: #F8F8F8;
 }
 
+header input:focus, footer input:focus {
+    outline: 0;
+}
+
 header label, header p {
     color: #F8F8F8;
     font-style: italic;
@@ -22,10 +25,24 @@ header, footer {
     background-color: #4c4c4c;
 }
 
+header button:hover {
+    background: #dcc5a1;
+}
+
 footer input {
     background-color: transparent;
     color: #F8F8F8;
-    border-style: groove;
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-color: #F8F8F8;
+}
+
+footer a:hover{
+    background-color: inherit;
+}
+
+.calendar {
+    font-style: normal;
 }
 
 /*========================================================*/
@@ -34,14 +51,13 @@ footer input {
     cursor: pointer;
 }
 
-header button:hover {
-    background: #dcc5a1;
+.btn {
+    color: #F8F8F8;
 }
-
-.marginPicture {
-    margin-left: 4rem;
+.colorBtnLang {
+    background-color: #dcc5a1;
+    color: #4c4c4c;
 }
-
 .react-datepicker__day--selected,
 .react-datepicker__day--in-selecting-range,
 .react-datepicker__day--in-range,
@@ -61,6 +77,62 @@ header button:hover {
 .react-datepicker__quarter-text--keyboard-selected,
 .react-datepicker__year-text--keyboard-selected {
     background-color: #dcc5a1 !important;
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+.active {
+    border: 1px solid #888;
+    color: #888;
+    pointer-events: none;
+}
+
+.disabled {
+    pointer-events: none;
+    box-shadow: none;
+    color: #999;
+}
+
+
+li::marker{
+    font-size: 0.5rem;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+ol {
+    /* убираем стандартную нумерацию */
+    list-style: none;
+    /* Идентифицируем счетчик и даем ему имя li. Значение счетчика не указано - по умолчанию оно равно 0 */
+    counter-reset: li;
+}
+
+ol li:before {
+    /* Определяем элемент, который будет нумероваться — li. Псевдоэлемент before указывает, что содержимое,
+     вставляемое при помощи свойства content, будет располагаться перед пунктами списка. Здесь же устанавливается
+     значение приращения счетчика (по умолчанию равно 1). */
+    counter-increment: li;
+    /* С помощью свойства content выводится номер пункта списка. counters() означает, что генерируемый текст
+    представляет собой значения всех счетчиков с таким именем. Точка в кавычках добавляет разделяющую точку
+    между цифрами, а точка с пробелом добавляется перед содержимым каждого пункта списка */
+    content: counters(li, ".") ". ";
 }
 
 

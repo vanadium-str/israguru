@@ -6,21 +6,18 @@
     border-radius: 20px;
     text-align: center;
 }
+.btnWhite {
+    background-color: #f1f1f1;
+    color: #4c4c4c;
+    width: 155px;
+    height: 40px;
+    border-radius: 20px;
+}
 
 .btnGo{
     background-color: #F8F8F8;
     color: #4c4c4c;
-}
-
-.btn {
-    color: #F8F8F8;
-}
-
-.btnWhite {
-    background-color: transparent;
-    color: #4c4c4c;
-    width: 155px;
-    height: 40px;
+    width: 2.5rem;
     border-radius: 20px;
 }
 .btnBig:link{
@@ -29,4 +26,11 @@
 .btnBig:hover{
     background-color: #4c4c4c;
     color: #F8F8F8;
+}
+.btnWhite:link{
+    text-decoration: none;
+}
+.btnWhite:hover{
+    background-color: #f1f1f1;
+    color: #4c4c4c;
 }

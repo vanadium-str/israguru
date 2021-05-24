@@ -2,7 +2,6 @@ import React, {useContext} from 'react';
 import {signUpEvent} from "../../utils/constants";
 import style from "../../css_modules/button.module.css";
 import {Link} from "react-router-dom";
-import {IsraGuruContext} from "../../utils/сontext";
 
 const ButtonAccept = ({id}) => {
     return (

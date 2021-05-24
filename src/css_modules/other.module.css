@@ -1,5 +1,5 @@
 .scroll {
-    width: 50rem;
+    width: 45rem;
     height: 36rem;
     overflow: scroll;
     overflow-x: hidden;
@@ -11,5 +11,5 @@
 }
 .themeBack{
     background-image: url("../images/back.jpg");
-    min-height: 100vh;
+    min-height: 95vh;
 }

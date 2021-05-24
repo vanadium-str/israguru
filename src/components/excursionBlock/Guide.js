@@ -14,7 +14,7 @@ const Guide = ({guide}) => {
                      alt='guide'/>
                 <div>
                     <p className='small mb-0'>Ваш гид:</p>
-                    <Link className={`${link.link}`} to={`/${guidePath}/${guide}`}>
+                    <Link className={`${link.link} mb-0`} to={`/${guidePath}/${guide}`}>
                         {guideInfo[guide].name}  {guideInfo[guide].surname}</Link>
                 </div>
             </div>

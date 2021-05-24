@@ -3,9 +3,10 @@ import other from "../../css_modules/other.module.css";
 import style from "../../css_modules/button.module.css";
 import payment from "../../css_modules/payment.module.css";
 import {IsraGuruContext} from "../../utils/сontext";
-import {paymentSuccessful} from "../../utils/constants";
+import {paymentSuccessful, signUpEvent} from "../../utils/constants";
 import {Link} from "react-router-dom";
 import {FaCcVisa,FaCcMastercard,FaCcDiscover} from "react-icons/fa";
+import IconsFormPayment from "./IconsFormPayment";
 
 const PaymentPage = (props) => {
     let keyExcursion = props.match.params.idExcursion;
@@ -18,19 +19,9 @@ const PaymentPage = (props) => {
                     Оплата
                 </h2>
                     <div className={`${payment.col50}`}>
-                        <div className={`${payment.row}`}>
-                            <div className={`${payment.svg}`}>
-                                <FaCcVisa/>
-                            </div>
-                            <div className={`${payment.svg} ml-2`}>
-                                <FaCcMastercard/>
-                            </div>
-                            <div className={`${payment.svg} ml-2`}>
-                                <FaCcDiscover/>
-                            </div>
-                        </div>
+                        <IconsFormPayment/>
                         <label className={`${payment.labelStyle}`}>Владелец карты:</label>
-                        <input className={`${payment.inputStyle}`} type="text" placeholder="ФИО"/>
+                        <input className={`${payment.inputStyle}`} type="text" placeholder="Фамилия Имя"/>
                         <label className={`${payment.labelStyle}`} >Номер карты:</label>
                         <input className={`${payment.inputStyle}`} type="text" placeholder="1111-2222-3333-4444"/>
                         <div className={`${payment.row}`}>
@@ -48,8 +39,11 @@ const PaymentPage = (props) => {
                             </div>
                         </div>
                     </div>
-                    <Link to={`/${paymentSuccessful}/${keyExcursion}`} className={`${style.btnBig}`}>
+                    <Link to={`/${paymentSuccessful}/${keyExcursion}`} className={`${style.btnBig} mr-5`}>
                         Продолжить
+                    </Link>
+                    <Link to={`/${signUpEvent}/${keyExcursion}`} className={`${style.btnWhite} text-center`}>
+                        Отменить
                     </Link>
                 </form>
             </div>

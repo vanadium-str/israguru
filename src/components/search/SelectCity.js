@@ -11,11 +11,16 @@ const StyledPopup = styled(Popup)`
   }
 `;
 
-const SearchCity = () => {
-    const {setCity, city} = useContext(IsraGuruContext);
+const SelectCity = () => {
+    const {setCity, city, setCurrentPage} = useContext(IsraGuruContext);
     return (
         <StyledPopup
-            trigger={<input className='w-75 d-flex flex-row cursor' type='text' placeholder='Тель Авив Яффо' value={city}/>}
+            trigger={
+                <input
+                    className='w-75 d-flex flex-row cursor'
+                    type='text'
+                    placeholder='Тель Авив Яффо'
+                    value={city}/>}
             position="bottom right"
             on='hover'
         >
@@ -25,9 +30,18 @@ const SearchCity = () => {
                 </div>
                 <div className={`${style.popupList}`}>
                     <ul className='mt-4'>
-                        <li className='cursor mb-2' value={city} onClick={()=>{setCity('')}}>Показать все</li>
+                        <li className='cursor mb-2' value={city} onClick={()=>{
+                            setCity('');
+                            setCurrentPage(1);
+                        }}>Показать все
+                        </li>
+
                         {cities.map((item, key)=>
-                            <li key={key} className='cursor mb-2' value={city} onClick={()=>{setCity(item)}}>{item}</li>
+                            <li key={key} className='cursor mb-2' value={city} onClick={()=>{
+                                setCity(item)
+                                setCurrentPage(1);
+                            }}>{item}
+                            </li>
                         )}
                     </ul>
                 </div>
@@ -36,4 +50,4 @@ const SearchCity = () => {
     );
 };
 
-export default SearchCity;
+export default SelectCity;
