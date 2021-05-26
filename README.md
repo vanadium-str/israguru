@@ -1,6 +1,6 @@
 # IsraGuru - a resource for finding excursions, intended for potential travelers in Israel.
 
-##The application includes the following functionality: 
+## The application includes the following functionality: 
 * search for a suitable excursion by different parameters (date, city, level, and language of excursion)
 * searching by keywords
 * provide advanced information about the selected excursion and opportunity for reservation and pay
