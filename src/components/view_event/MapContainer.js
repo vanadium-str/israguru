@@ -12,7 +12,7 @@ const MapContainer = ({id}) => {
     };
     return (
         <LoadScript
-            googleMapsApiKey="AIzaSyAJ8W9ZFoibPXr1H_FcdmUsBQP9Wzglh-Q"
+            googleMapsApiKey="key_here"
         >
             <GoogleMap
                 streetView={''}
