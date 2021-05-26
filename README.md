@@ -7,6 +7,8 @@
 * providing extended information about the selected excursion and opportunity for reservation and pay
 * displaying full information about guides and their current excursions
 
+[![alt tag](https://i.imgur.com/jFabDDF.png)](https://i.imgur.com/qKSBgez.mp4)
+
 ## You can run this project locally just do:
 * on GitHub, navigate to the main page of the repository.
 * above the list of files, click  **Code**.
