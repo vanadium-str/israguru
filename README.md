@@ -14,7 +14,7 @@
 * open Terminal.
 * change the current working directory to the location where you want the cloned directory.
 * type git clone, and then paste the URL you copied earlier
-         ###`$ git clone https://github.com/vanadium-str/project-israguru.git`
+         `$ git clone https://github.com/vanadium-str/project-israguru.git`
 * press **Enter** to create your local clone.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
