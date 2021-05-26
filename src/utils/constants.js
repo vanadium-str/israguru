@@ -14,7 +14,7 @@ export const paymentPage = 'payment';
 export const paymentSuccessful = 'payment_successful';
 
 export const currencyURL = 'http://data.fixer.io/api';
-export const key = '0c8f58ca32f891ac4ad7690fce291152';
+export const key = 'key_here';
 
 export const time = (time)=>{
     if(time===1 || time===21){
