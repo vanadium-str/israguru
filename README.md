@@ -11,11 +11,11 @@
 * on GitHub, navigate to the main page of the repository.
 * above the list of files, click  **Code**.
 * to clone the repository using HTTPS, under "Clone with HTTPS"
-* open Terminal.
+* open Terminal
 * change the current working directory to the location where you want the cloned directory.
 * type git clone, and then paste the URL you copied earlier
-         `$ git clone https://github.com/vanadium-str/project-israguru.git`
-* press **Enter** to create your local clone.
+### `$ git clone https://github.com/vanadium-str/project-israguru.git`
+* press **Enter** to create your local clone
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
