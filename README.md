@@ -1,9 +1,9 @@
 # IsraGuru - a resource for finding excursions, intended for potential travelers in Israel.
 
 ## The application includes the following functionality: 
-* search for a suitable excursion by different parameters (date, city, level, and language of excursion)
+* searching for a suitable excursion by different parameters (date, city, level, and language of excursion)
 * searching by keywords
-* provide advanced information about the selected excursion and opportunity for reservation and pay
+* providing extended information about the selected excursion and opportunity for reservation and pay
 * displaying full information about guides and their current excursions
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
