@@ -1,4 +1,5 @@
-# IsraGuru - a resource for finding excursions, intended for potential travelers in Israel.
+![alt tag](https://i.imgur.com/cgdFj5z.png) \
+ a resource for finding excursions, intended for potential travelers in Israel.
 
 ## The application includes the following functionality: 
 * searching for a suitable excursion by different parameters (date, city, level, and language of excursion)
