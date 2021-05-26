@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# IsraGuru - a resource for finding excursions, intended for potential travelers in Israel.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
