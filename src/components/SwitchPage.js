@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch} from "react-router-dom";
+import Router, {Switch} from "react-router-dom";
 import {Route} from "react-router-dom";
 import FullInfoExcursion from "./view_event/FullInfoExcursion";
 import GuideInfo from "./guideInfo/index";
@@ -11,37 +11,37 @@ import {fullInfo, guidePath, homePage, paymentPage, paymentSuccessful, signUpEve
 
 const SwitchPage = () => {
     return (
-        <Switch>
-            <Route
-                path={`/${paymentSuccessful}/:idExcursion`}
-                render={routerProps => <PaymentSuccessful {...routerProps}/>}
-                exact
-            />
-            <Route
-                path={`/${paymentPage}/:idExcursion`}
-                render={({match}) => <PaymentPage match={match}/>}
-                exact/>
-            <Route
-                path={`/${signUpEvent}/:idExcursion`}
-                render={routerProps => <SignupEvent {...routerProps}/>}
-                exact
-            />
-            <Route
-                path={`/${fullInfo}/:idExcursion`}
-                render={routerProps => <FullInfoExcursion {...routerProps}/>}
-                exact
-            />
-            <Route
-                path={`/${guidePath}/:idGuide`}
-                render={({match}) => <GuideInfo match={match}/>}
-                exact
-            />
-            <Route
-                path={[`/`, `/${homePage}`]}
-                render={routerProps => <GeneralSearch {...routerProps}/>}
-                exact
-            />
-        </Switch>
+            <Switch>
+                <Route
+                    path={`/${paymentSuccessful}/:idExcursion`}
+                    render={routerProps => <PaymentSuccessful {...routerProps}/>}
+                    exact
+                />
+                <Route
+                    path={`/${paymentPage}/:idExcursion`}
+                    render={({match}) => <PaymentPage match={match}/>}
+                    exact/>
+                <Route
+                    path={`/${signUpEvent}/:idExcursion`}
+                    render={routerProps => <SignupEvent {...routerProps}/>}
+                    exact
+                />
+                <Route
+                    path={`/${fullInfo}/:idExcursion`}
+                    render={routerProps => <FullInfoExcursion {...routerProps}/>}
+                    exact
+                />
+                <Route
+                    path={`/${guidePath}/:idGuide`}
+                    render={({match}) => <GuideInfo match={match}/>}
+                    exact
+                />
+                <Route
+                    path={[`/`, `/${homePage}`]}
+                    render={routerProps => <GeneralSearch {...routerProps}/>}
+                    exact
+                />
+            </Switch>
     )
 }
 
