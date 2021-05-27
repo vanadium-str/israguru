@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/israguru/static/css/main.1271ac79.chunk.css",
+    "main.js": "/israguru/static/js/main.ad8bc993.chunk.js",
+    "main.js.map": "/israguru/static/js/main.ad8bc993.chunk.js.map",
+    "runtime-main.js": "/israguru/static/js/runtime-main.8ff91d8e.js",
+    "runtime-main.js.map": "/israguru/static/js/runtime-main.8ff91d8e.js.map",
+    "static/css/2.01ca705e.chunk.css": "/israguru/static/css/2.01ca705e.chunk.css",
+    "static/js/2.85e37822.chunk.js": "/israguru/static/js/2.85e37822.chunk.js",
+    "static/js/2.85e37822.chunk.js.map": "/israguru/static/js/2.85e37822.chunk.js.map",
+    "index.html": "/israguru/index.html",
+    "static/css/2.01ca705e.chunk.css.map": "/israguru/static/css/2.01ca705e.chunk.css.map",
+    "static/css/main.1271ac79.chunk.css.map": "/israguru/static/css/main.1271ac79.chunk.css.map",
+    "static/js/2.85e37822.chunk.js.LICENSE.txt": "/israguru/static/js/2.85e37822.chunk.js.LICENSE.txt",
+    "static/media/other.module.css": "/israguru/static/media/back.157595f3.jpg",
+    "static/media/error.180700bb.png": "/israguru/static/media/error.180700bb.png",
+    "static/media/logo.d2bb589b.png": "/israguru/static/media/logo.d2bb589b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8ff91d8e.js",
+    "static/css/2.01ca705e.chunk.css",
+    "static/js/2.85e37822.chunk.js",
+    "static/css/main.1271ac79.chunk.css",
+    "static/js/main.ad8bc993.chunk.js"
+  ]
+}
