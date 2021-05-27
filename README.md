@@ -16,6 +16,6 @@
 * open Terminal
 * change the current working directory to the location where you want the cloned directory.
 * type git clone, and then paste the URL you copied earlier
-### `$ git clone https://github.com/vanadium-str/project-israguru.git`
+### `$ git clone https://github.com/vanadium-str/israguru.git`
 * press **Enter** to create your local clone
 
