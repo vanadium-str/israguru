@@ -9,7 +9,7 @@
 
 Link: https://vanadium-str.github.io/project-israguru/
 
-## You can run this project locally just do:
+## You can run this project locally, just do:
 * navigate to the main page of the repository on GitHub;
 * above the list of files click  **Code**;
 * to clone the repository using HTTPS, under "Clone with HTTPS";
