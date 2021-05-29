@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import  DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import {IsraGuruContext} from "../../utils/сontext";
@@ -8,6 +8,7 @@ const Calendar = () => {
     const setDate = (start, end) => {
         return start > end ? new Date() : setStartDate(start);
     };
+
     return (
         <>
             <div className='mr-3'>

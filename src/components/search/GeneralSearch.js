@@ -1,9 +1,6 @@
 import React, {useContext} from 'react';
 import SearchFromSelection from "./SearchFromSelection";
-import {excursionData} from "../../json/excursionData";
-import StartPage from "../StartPage";
-import ErrorSearch from "../error/ErrorSearch";
-import {excursions, findByDate} from "../../utils/constants";
+import {excursions} from "../../utils/constants";
 import {IsraGuruContext} from "../../utils/сontext";
 import {guideInfo} from "../../json/guideInfo";
 
@@ -14,7 +11,7 @@ const GeneralSearch = () => {
         || k[1].city.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase()));
     if (search) {
         return (
-            <SearchFromSelection data={inputKeyword}/>//GENERALSEARCH
+            <SearchFromSelection data={inputKeyword}/>
         )
     }
     // if(!language){

@@ -1,5 +1,5 @@
 import React from 'react';
-import Router, {Switch} from "react-router-dom";
+import {Switch} from "react-router-dom";
 import {Route} from "react-router-dom";
 import FullInfoExcursion from "./view_event/FullInfoExcursion";
 import GuideInfo from "./guideInfo/index";

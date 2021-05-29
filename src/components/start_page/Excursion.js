@@ -9,7 +9,7 @@ import other from "../../css_modules/other.module.css";
 import styled from "styled-components";
 
 const StyledExcursion = styled.div`
-  min-height: ${props=>70/props.size}vh
+  min-height: ${props => 70 / props.size}vh
 `;
 const Excursion = ({id, guide, size}) => {
     return (
@@ -17,6 +17,7 @@ const Excursion = ({id, guide, size}) => {
 
             <div className='row shadow mb-3'>
                 <div className='col-8'>
+
                     <div className='d-flex justify-content-between'>
                         <div className='mt-2'>
                             <Image id={id}/>

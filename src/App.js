@@ -2,7 +2,6 @@ import './App.css';
 import React, {useState} from 'react';
 import {IsraGuruContext} from "./utils/сontext";
 import SwitchPage from "./components/SwitchPage";
-import {excursionData} from "./json/excursionData";
 
 const App = () => {
 

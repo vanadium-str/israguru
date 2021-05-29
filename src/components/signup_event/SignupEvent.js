@@ -16,25 +16,28 @@ import {paymentPage} from "../../utils/constants";
 import {IsraGuruContext} from "../../utils/сontext";
 import {excursionData} from "../../json/excursionData";
 
-
-
 const SignupEvent = (props) => {
     let keyExcursion = props.match.params.idExcursion;
     const {show, setShow} = useContext(IsraGuruContext);
+
     const showModal = () => {
         setShow(true);
     };
+
     const hideModal = () => {
         setShow(false);
     };
+
     return (
         <div className={`${other.themeBack} container-fluid`}>
             <div className='row'>
-            <div>
-                <Logo/>
-            </div>
+                <div>
+                    <Logo/>
+                </div>
                 <div className='offset-2 mt-5'>
-                    <h2 className={`font-weight-bold`}>Записаться и оплатить</h2>
+                    <h2 className={`font-weight-bold`}>
+                        Записаться и оплатить
+                    </h2>
                 </div>
             </div>
             <div className='row shadow m-4'>
@@ -48,48 +51,80 @@ const SignupEvent = (props) => {
                     <div className='ml-3 mt-3'>
                         <DateOfExcursion id={keyExcursion}/>
                     </div>
-                    <div><Info id={keyExcursion}/></div>
-                    <div className='mb-3'><Guide id={keyExcursion} guide={excursionData[keyExcursion].guide}/></div>
+                    <div>
+                        <Info id={keyExcursion}/>
+                    </div>
+                    <div className='mb-3'>
+                        <Guide id={keyExcursion} guide={excursionData[keyExcursion].guide}/>
+                    </div>
                 </div>
             </div>
+
             <div className='row mt-5'>
                 <div className='col-4 offset-3'>
-                    <input className={`${sign.signUpEvent}`} type='text' placeholder='Имя'/>
-                    <input className={`${sign.signUpEvent}`} type='text' placeholder='Телефон'/>
-                    <input className={`${sign.signUpEvent}`} type='text' placeholder='Email'/>
+                    <input className={`${sign.signUpEvent}`}
+                           type='text'
+                           placeholder='Имя'/>
+                    <input className={`${sign.signUpEvent}`}
+                           type='text'
+                           placeholder='Телефон'/>
+                    <input className={`${sign.signUpEvent}`}
+                           type='text'
+                           placeholder='Email'/>
                 </div>
                 <div className='col-4'>
-                    <p className={`font-weight-bold`}>Внимание:</p>
-                    <p className={`${style.description} font-italic`}>Будьте внимательны при заполнении...</p>
+                    <p className={`font-weight-bold`}>
+                        Внимание:
+                    </p>
+                    <p className={`${style.description} font-italic`}>
+                        Будьте внимательны при заполнении...
+                    </p>
                 </div>
             </div>
+
             <div className='row'>
                 <div className='col-9 offset-3 mt-3'>
-                    <p className={`${sign.text}`}><b>Количество</b> (до 10)</p>
-                    <a  className={`ml-4 ${sign.previous} ${sign.round}`}>-</a>
-                    <input className={`ml-2 ${sign.count} border-0 text-center`} type='number' min={0} defaultValue='0'/>
+                    <p className={`${sign.text}`}>
+                        <b>Количество</b> (до 10)
+                    </p>
+                    <a className={`ml-4 ${sign.previous} ${sign.round}`}>-</a>
+
+                    <input
+                        className={`ml-2 ${sign.count} border-0 text-center`}
+                        type='number'
+                        min={0}
+                        defaultValue='0'/>
+
                     <a className={`ml-2 ${sign.next} ${sign.round}`}>+</a>
                 </div>
-
             </div>
+
             <div className='row'>
                 <div className='col-sm-3 offset-3 d-flex flex-column align-items-center'>
-                        <Link to={`/${paymentPage}/${keyExcursion}`} className={`${button.btnBig} mt-5`}>
-                            Оплатить
-                        </Link>
-                        <p className={`${sign.pay} small ${sign.text} mb-5`}>Нажимая "Оплатить", я соглашаюсь с
-                            <a onClick={()=>showModal()} className='p-0 cursor' >правилами приватности</a>
-                            <Modal
-                                isOpen={show}
-                                closeTimeoutMS={150}
-                                onRequestClose={hideModal}
-                            >
-                                <PrivacyPolicy/>
-                                <button className='close' type="button" onClick={()=>hideModal()}>
-                                    x
-                                </button>
-                            </Modal>
-                        </p>
+                    <Link to={`/${paymentPage}/${keyExcursion}`}
+                          className={`${button.btnBig} mt-5`}>
+                        Оплатить
+                    </Link>
+
+                    <p className={`${sign.pay} small ${sign.text} mb-5`}>
+                        Нажимая "Оплатить", я соглашаюсь с
+                        <a onClick={() => showModal()} className='p-0 cursor'>
+                            правилами приватности
+                        </a>
+
+                        <Modal
+                            isOpen={show}
+                            closeTimeoutMS={150}
+                            onRequestClose={hideModal}>
+
+                            <PrivacyPolicy/>
+                            <button className='close'
+                                    type="button"
+                                    onClick={() => hideModal()}>
+                                x
+                            </button>
+                        </Modal>
+                    </p>
                 </div>
             </div>
         </div>
