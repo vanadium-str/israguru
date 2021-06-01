@@ -1,0 +1,22 @@
+@media screen and (min-width: 800px ){
+    .rightBar{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (max-width: 768px){
+    .listExcursionShort{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .rightBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .rightBarButton {
+        position: relative;
+        margin-top: 1rem;
+    }
+}

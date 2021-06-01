@@ -48,4 +48,30 @@ export function findByDate (dateOfExcursion, start, end) {
     }else return console.log('not found');
 }
 
+// ???? NAME
+export function compareDates (dateOfExcursion, currentDate) {
+    const date = new Date(dateOfExcursion).getTime();
+    const current = new Date(currentDate).getTime();
+    if(date>=current){
+        return date;
+    }
+}
+
+export function swap(items, firstIndex, secondIndex){
+    const temp = items[firstIndex];
+    items[firstIndex] = items[secondIndex];
+    items[secondIndex] = temp;
+}
+
+export function BubbleSort (arrayOfExcursions) {
+    let length = arrayOfExcursions.length;
+    for(let i = 0; i<length - 1; i++){
+        for (let j = 0; j < length - 1 - i; j ++){
+            if(new Date(arrayOfExcursions[j+1][1].date).getTime() < new Date(arrayOfExcursions[j][1].date).getTime()){
+                swap(arrayOfExcursions,j+1, j);
+            }
+        }
+    }
+}
+
 export const excursions = Object.entries(excursionData);

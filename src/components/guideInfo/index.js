@@ -14,13 +14,13 @@ const Index = (props) => {
             </div>
 
             <div className='row'>
-                <div className='mt-5 col-5'>
+                <div className='col-xl-4 col-lg-4 col-md-5'>
                     <img className='rounded-circle'
                          src={guideInfo[keyGuide].imgGuide}
                          alt='guide'
-                         width='70%'/>
+                         width='100%'/>
                 </div>
-                <div className='col-7'>
+                <div className='col-xl-8 col-lg-8 col-md-7'>
                     <GuideAbout idGuide={keyGuide}/>
                 </div>
             </div>

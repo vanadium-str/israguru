@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+
 header input {
     width: 8rem;
     height: 2rem;
@@ -37,7 +39,7 @@ footer input {
     border-bottom-color: #F8F8F8;
 }
 
-footer a:hover{
+footer a:hover {
     background-color: inherit;
 }
 
@@ -54,10 +56,12 @@ footer a:hover{
 .btn {
     color: #F8F8F8;
 }
+
 .colorBtnLang {
     background-color: #dcc5a1;
     color: #4c4c4c;
 }
+
 .react-datepicker__day--selected,
 .react-datepicker__day--in-selecting-range,
 .react-datepicker__day--in-range,
@@ -70,8 +74,9 @@ footer a:hover{
 .react-datepicker__year-text--selected,
 .react-datepicker__year-text--in-selecting-range,
 .react-datepicker__year-text--in-range {
-    background-color:#dcc5a1 !important;
+    background-color: #dcc5a1 !important;
 }
+
 .react-datepicker__day--keyboard-selected,
 .react-datepicker__month-text--keyboard-selected,
 .react-datepicker__quarter-text--keyboard-selected,
@@ -105,7 +110,7 @@ footer a:hover{
     color: #999;
 }
 
-li::marker{
+li::marker {
     font-size: 0.5rem;
 }
 
@@ -126,4 +131,24 @@ ol {
 ol li:before {
     counter-increment: li;
     content: counters(li, ".") ". ";
+}
+
+.back {
+    background-image: url("./images/2.jpg");
+    /*https://photocentra.ru/images/main72/725497_main.jpg*/
+    background-size: cover;
+    min-height: 85vH;
+    color: #F8F8F8;
+    font-family: 'Mate SC', serif;
+    /*padding-top: 10rem;*/
+}
+
+.startPageLogo{
+    font-size: 10rem;
+    font-family: "Bernard MT Condensed", serif;
+}
+
+.startPageText{
+    letter-spacing: 10px;
+    background-color: #4c4c4c;
 }

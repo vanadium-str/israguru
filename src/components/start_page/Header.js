@@ -7,7 +7,7 @@ import {IsraGuruContext} from "../../utils/сontext";
 import lang from "../../css_modules/header.module.css";
 
 const Header = () => {
-    const {language, setLanguage, setCurrentPage} = useContext(IsraGuruContext);
+    const {language, setLanguage, setCurrentPage, setShowStartPage} = useContext(IsraGuruContext);
 
     return (
         <header className='container-fluid'>
@@ -49,6 +49,7 @@ const Header = () => {
                             onClick={() => {
                                 setLanguage('');
                                 setCurrentPage(1);
+                                setShowStartPage(false);
                             }}>
                             Все
                         </button>
@@ -59,6 +60,7 @@ const Header = () => {
                             onClick={() => {
                                 setLanguage('English');
                                 setCurrentPage(1);
+                                setShowStartPage(false);
                             }}>
                             EN
                         </button>
@@ -66,6 +68,7 @@ const Header = () => {
                             btn w-50 font-weight-bold pl-0 pb-0`} onClick={() => {
                             setLanguage('Русский');
                             setCurrentPage(1);
+                            setShowStartPage(false);
                         }}>
                             RU
                         </button>

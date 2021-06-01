@@ -12,7 +12,7 @@ const StyledPopup = styled(Popup)`
 `;
 
 const SelectCity = () => {
-    const {setCity, city, setCurrentPage} = useContext(IsraGuruContext);
+    const {setCity, city, setCurrentPage, setShowStartPage} = useContext(IsraGuruContext);
 
     return (
         <StyledPopup
@@ -38,6 +38,7 @@ const SelectCity = () => {
                         <li className='cursor mb-2' value={city} onClick={() => {
                             setCity('');
                             setCurrentPage(1);
+                            setShowStartPage(false);
                         }}>
                             Показать все
                         </li>
@@ -46,6 +47,7 @@ const SelectCity = () => {
                             <li key={key} className='cursor mb-2' value={city} onClick={() => {
                                 setCity(item)
                                 setCurrentPage(1);
+                                setShowStartPage(false);
                             }}>
                                 {item}
                             </li>

@@ -6,7 +6,7 @@ import link from '../../css_modules/link.module.css';
 
 const Footer = () => {
     return (
-        <footer className="container-fluid">
+        <footer className="container-fluid mt-3">
             <div className="d-flex justify-content-around">
 
                 <div className={`${style.footerText} small mt-3 mb-4`}>

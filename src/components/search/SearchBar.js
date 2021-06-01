@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {IsraGuruContext} from "../../utils/сontext";
 
 const SearchBar = () => {
-    const {keyword, setKeyword, setSearch, setCurrentPage} = useContext(IsraGuruContext);
+    const {keyword, setKeyword, setSearch, setCurrentPage, setShowStartPage} = useContext(IsraGuruContext);
 
     return (
         <div>
@@ -14,6 +14,7 @@ const SearchBar = () => {
                        setKeyword(e.target.value);
                        setSearch(true);
                        setCurrentPage(1);
+                       setShowStartPage(false);
                    }}
             />
         </div>

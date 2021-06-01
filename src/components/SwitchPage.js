@@ -8,6 +8,7 @@ import SignupEvent from "./signup_event/SignupEvent";
 import PaymentSuccessful from "./payment/PaymentSuccessful";
 import PaymentPage from "./payment/PaymentPage";
 import {fullInfo, guidePath, homePage, paymentPage, paymentSuccessful, signUpEvent} from "../utils/constants";
+import StartPage from "./StartPage";
 
 const SwitchPage = () => {
     return (
@@ -38,7 +39,7 @@ const SwitchPage = () => {
                 />
                 <Route
                     path={[`/`, `/${homePage}`]}
-                    render={routerProps => <GeneralSearch {...routerProps}/>}
+                    render={routerProps => <StartPage {...routerProps}/>}
                     exact
                 />
             </Switch>

@@ -2,6 +2,7 @@ import './App.css';
 import React, {useState} from 'react';
 import {IsraGuruContext} from "./utils/сontext";
 import SwitchPage from "./components/SwitchPage";
+import StartPage from "./components/StartPage";
 
 const App = () => {
 
@@ -19,13 +20,14 @@ const App = () => {
         longitude: 34.757,
     });
     const [currentPage, setCurrentPage] = useState(1);
-    const [show, setShow] = useState(false);
+    const [showModalWindow, setShowModalWindow] = useState(false);
+    const [showStartPage, setShowStartPage] = useState(true);
 
     return (
         <IsraGuruContext.Provider value={
             {
-                level, setLevel,
                 idGuide, idExcursion,
+                level, setLevel,
                 city, setCity,
                 keyword, setKeyword,
                 search, setSearch,
@@ -34,7 +36,8 @@ const App = () => {
                 language, setLanguage,
                 position, setPosition,
                 currentPage, setCurrentPage,
-                show, setShow
+                showModalWindow, setShowModalWindow,
+                showStartPage, setShowStartPage
             }
         }>
             <SwitchPage/>

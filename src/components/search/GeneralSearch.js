@@ -1,12 +1,14 @@
 import React, {useContext} from 'react';
 import SearchFromSelection from "./SearchFromSelection";
-import {excursions} from "../../utils/constants";
+import {BubbleSort, compareDates, excursions} from "../../utils/constants";
 import {IsraGuruContext} from "../../utils/сontext";
 import {guideInfo} from "../../json/guideInfo";
 
 const GeneralSearch = () => {
-    const {keyword, search, language} = useContext(IsraGuruContext);
-    const inputKeyword = excursions.filter(k=>guideInfo[k[1].guide].name.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
+    const {keyword, search, startDate} = useContext(IsraGuruContext);
+    const currentExcursions = excursions.filter(k=>compareDates(k[1].date,startDate));
+    BubbleSort(currentExcursions);
+    const inputKeyword = currentExcursions.filter(k=>guideInfo[k[1].guide].name.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
         || guideInfo[k[1].guide].surname.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
         || k[1].city.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase()));
     if (search) {
@@ -14,19 +16,10 @@ const GeneralSearch = () => {
             <SearchFromSelection data={inputKeyword}/>
         )
     }
-    // if(!language){
-    //     return (
-    //         <div>
-    //             {console.log('Lan')}
-    //             <SearchFromSelection data={excursions}/>
-    //         </div>
-    //     )
-    // }
     else {
         return (
             <div>
-                {console.log('default')}
-                <SearchFromSelection data={excursions}/>
+                <SearchFromSelection data={currentExcursions}/>
             </div>
         );
     }

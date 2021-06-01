@@ -5,7 +5,7 @@ import {levels} from "../../utils/constants";
 import style from "../../css_modules/popup.module.css";
 
 const SelectLevel = () => {
-    const {setLevel, level, setCurrentPage} = useContext(IsraGuruContext);
+    const {setLevel, level, setCurrentPage, setShowStartPage} = useContext(IsraGuruContext);
 
     return (
         <Popup
@@ -31,6 +31,7 @@ const SelectLevel = () => {
                         <li className='cursor mb-2' value={level} onClick={() => {
                             setLevel('');
                             setCurrentPage(1);
+                            setShowStartPage(false);
                         }}>
                             Показать все
                         </li>
@@ -39,6 +40,7 @@ const SelectLevel = () => {
                             <li className='cursor mb-2' value={level} onClick={() => {
                                 setLevel(item);
                                 setCurrentPage(1);
+                                setShowStartPage(false);
                             }}>
                                 {item}
                             </li>

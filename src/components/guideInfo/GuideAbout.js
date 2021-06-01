@@ -1,4 +1,5 @@
 import React from 'react';
+import '../../styles/guide.css'
 import Description from "../excursionBlock/Description";
 import DateOfExcursion from "../excursionBlock/DateOfExcursion";
 import ButtonMore from "../excursionBlock/ButtonMore";
@@ -23,7 +24,7 @@ const GuideAbout = ({idGuide}) => {
                 <h4 className='font-weight-bold'>
                     Кто я
                 </h4>
-                <p>
+                <p className='col-xl-12 col-lg-9'>
                     {guideInfo[idGuide].description}
                 </p>
 
@@ -32,15 +33,15 @@ const GuideAbout = ({idGuide}) => {
                 </h4>
                 {guideExcursions.map((key) => {
                     return (
-                        <div className='row shadow mb-2 mr-2 ml-1 p-2'>
-                            <div className='col-9 p-0'>
+                        <div className='row shadow mb-2 mr-2 ml-1 p-2 listExcursionShort'>
+                            <div className='col-xl-9 col-lg-8 p-0'>
                                 <Description key={key[0]} id={key[0]}/>
                             </div>
-                            <div className='col-3 d-flex justify-content-center'>
+                            <div className='col-lg-3 rightBar'>
                                 <div>
                                     <DateOfExcursion id={key[0]}/>
                                 </div>
-                                <div className={`${other.bottom} mb-5`}>
+                                <div className={`${other.bottom} mb-5 rightBarButton`}>
                                     <ButtonMore guide={key[1].guide} id={key[0]}/>
                                 </div>
                             </div>

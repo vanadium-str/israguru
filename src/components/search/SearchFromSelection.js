@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import StartPage from "../StartPage";
+import ExcursionPage from "../start_page/ExcursionPage";
 import {IsraGuruContext} from "../../utils/сontext";
 import {findByDate} from "../../utils/constants";
 
@@ -15,10 +15,10 @@ const SearchFromSelection = ({data}) => {
     let selectedByLevelAndDate = selectedLevel.filter(k=>findByDate(k[1].date, startDate, endDate)); // by level and date
 
     //default
-    if (city === '' && level === '' && startDate === endDate) {
+    if (city === '' && level === '' && startDate.getTime() === endDate.getTime()) {
         console.log('1');
         return (
-            <StartPage data={data}/>
+            <ExcursionPage data={selectedByLanguage}/>
         );
     }
 
@@ -26,7 +26,7 @@ const SearchFromSelection = ({data}) => {
     if(selectedByDate.length && !city && !level){
         console.log('2');
         return (
-            <StartPage data={selectedByDate}/>
+            <ExcursionPage data={selectedByDate}/>
         );
     }
 
@@ -34,7 +34,7 @@ const SearchFromSelection = ({data}) => {
     if (selectedLevel.length && !selectedByDate.length && !city) {
         console.log('3');
         return (
-            <StartPage data={selectedLevel}/>
+            <ExcursionPage data={selectedLevel}/>
         );
     }
 
@@ -42,7 +42,7 @@ const SearchFromSelection = ({data}) => {
     if (selectedCity.length && !level && !selectedByDate.length) {
         console.log('4');
         return (
-            <StartPage data={selectedCity}/>
+            <ExcursionPage data={selectedCity}/>
         );
     }
 
@@ -50,7 +50,7 @@ const SearchFromSelection = ({data}) => {
     if(selectedByCityAndLevel.length && !selectedByDate.length){
         console.log('5');
         return (
-            <StartPage data={selectedByCityAndLevel}/>
+            <ExcursionPage data={selectedByCityAndLevel}/>
         );
     }
 
@@ -58,7 +58,7 @@ const SearchFromSelection = ({data}) => {
     if(selectedByCityAndDate.length && !level){
         console.log('6');
         return (
-            <StartPage data={selectedByCityAndDate}/>
+            <ExcursionPage data={selectedByCityAndDate}/>
         );
     }
 
@@ -66,7 +66,7 @@ const SearchFromSelection = ({data}) => {
     if(selectedByLevelAndDate.length && !city){
         console.log('7');
         return (
-            <StartPage data={selectedByLevelAndDate}/>
+            <ExcursionPage data={selectedByLevelAndDate}/>
         );
     }
 
@@ -74,12 +74,12 @@ const SearchFromSelection = ({data}) => {
     if(selectedByCityLevelDate.length){
         console.log('8');
         return (
-            <StartPage data={selectedByCityLevelDate}/>
+            <ExcursionPage data={selectedByCityLevelDate}/>
         );
     }
 
     return (
-        <StartPage data={0}/>
+        <ExcursionPage data={0}/>
     );
 }
 

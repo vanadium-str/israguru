@@ -18,14 +18,14 @@ import {excursionData} from "../../json/excursionData";
 
 const SignupEvent = (props) => {
     let keyExcursion = props.match.params.idExcursion;
-    const {show, setShow} = useContext(IsraGuruContext);
+    const {showModalWindow, setShowModalWindow} = useContext(IsraGuruContext);
 
     const showModal = () => {
-        setShow(true);
+        setShowModalWindow(true);
     };
 
     const hideModal = () => {
-        setShow(false);
+        setShowModalWindow(false);
     };
 
     return (
@@ -113,7 +113,7 @@ const SignupEvent = (props) => {
                         </a>
 
                         <Modal
-                            isOpen={show}
+                            isOpen={showModalWindow}
                             closeTimeoutMS={150}
                             onRequestClose={hideModal}>
 
