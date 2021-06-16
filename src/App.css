@@ -133,9 +133,10 @@ ol li:before {
     content: counters(li, ".") ". ";
 }
 
+
+/*====================================================================*/
 .back {
-    background-image: url("./images/2.jpg");
-    /*https://photocentra.ru/images/main72/725497_main.jpg*/
+    background-image: url("images/startPage.jpg");
     background-size: cover;
     min-height: 85vH;
     color: #F8F8F8;
@@ -151,4 +152,22 @@ ol li:before {
 .startPageText{
     letter-spacing: 10px;
     background-color: #4c4c4c;
+}
+
+@media screen and (max-width: 700px){
+    .startPageLogo{
+        font-size: 4rem;
+        font-family: "Bernard MT Condensed", serif;
+    }
+    .startPageText{
+        letter-spacing: 10px;
+        background-color: #4c4c4c;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 1030px){
+    .none{
+        display: none;
+    }
 }

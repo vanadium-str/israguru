@@ -11,14 +11,14 @@ const Header = () => {
 
     return (
         <header className='container-fluid'>
-            <header className='row mb-3 ml-4'>
-                <div className='col-3'>
+            <header className='row mb-3 ml-1 mr-1'>
+                <div className='col-12 col-sm-6 col-md-4 col-lg-2'>
                     <label>Поиск
                         <SearchBar/>
                     </label>
                 </div>
 
-                <div className='col-3'>
+                <div className='col-12 col-sm-6 col-md-4 col-lg-3'>
                     <label>Дата
                         <div className='d-flex flex-row calendar'>
                             <Calendar/>
@@ -26,19 +26,19 @@ const Header = () => {
                     </label>
                 </div>
 
-                <div className='col-2'>
+                <div className='col-6 col-sm-4 col-md-3 offset-md-1 offset-lg-0 col-lg-2'>
                     <label>Место
                         <SelectCity/>
                     </label>
                 </div>
 
-                <div className='col-2'>
+                <div className='col-6 col-sm-4 col-md-4 col-lg-2'>
                     <label>Уровень
                         <SelectLevel/>
                     </label>
                 </div>
 
-                <div className='col-2'>
+                <div className='col-6 col-sm-4 col-md-4 col-lg-2 mb-3'>
                     <p className='font-italic mb-0'>
                         Язык
                     </p>
@@ -73,6 +73,9 @@ const Header = () => {
                             RU
                         </button>
                     </div>
+                </div>
+                <div className='offset-1 col-5 offset-sm-5 col-sm-7 offset-md-1 col-md-3 offset-lg-0 col-lg-1 d-flex align-items-center'>
+                    <button className='btn font-weight-bold'>Сбросить</button>
                 </div>
             </header>
         </header>

@@ -9,8 +9,10 @@ const StartPage = () => {
     const {showStartPage, setShowStartPage} = useContext(IsraGuruContext);
     return (
         <div>
-            <Header/>
+
             {showStartPage ?
+                <div>
+                <div className='none'><Header/></div>
                 <div className='back d-flex justify-content-center align-items-center flex-column'>
                     <h1 className='startPageLogo mb-0'>IsraGuru</h1>
                     <h4 className='startPageText mb-4'>Экскурсии по Израилю</h4>
@@ -21,11 +23,16 @@ const StartPage = () => {
                         Вперед
                     </button>
                 </div>
-                : <GeneralSearch/>
+                </div>
+                :
+                <div>
+                <Header/>
+                <GeneralSearch/>
+                </div>
             }
             <Footer/>
         </div>
     );
-}
+};
 
 export default StartPage;
