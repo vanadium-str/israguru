@@ -3,6 +3,7 @@ import GuideAbout from "./GuideAbout";
 import Logo from "../Logo";
 import {guideInfo} from "../../json/guideInfo";
 import other from "../../css_modules/other.module.css";
+import style from "../../css_modules/guide.module.css";
 
 const Index = (props) => {
     let keyGuide = props.match.params.idGuide;
@@ -13,8 +14,8 @@ const Index = (props) => {
                 <Logo/>
             </div>
 
-            <div className='row'>
-                <div className='col-xl-4 col-lg-4 col-md-5'>
+            <div className={`row ${style.guideAbout}`}>
+                <div className='col-xl-4 col-lg-4 col-md-5 guideImg'>
                     <img className='rounded-circle'
                          src={guideInfo[keyGuide].imgGuide}
                          alt='guide'

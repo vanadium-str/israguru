@@ -16,19 +16,19 @@ const Excursion = ({id, guide, size}) => {
         <StyledExcursion className='container-fluid' size={size}>
 
             <div className='row shadow mb-3'>
-                <div className='col-8'>
+                <div className='col-12 col-lg-8'>
 
-                    <div className='d-flex justify-content-between'>
-                        <div className='mt-2'>
+                    <div className='d-flex justify-content-between wrapExcursion'>
+                        <div className='mt-2 picCenterSmall'>
                             <Image id={id}/>
                         </div>
-                        <div className='ml-4 mb-2'>
+                        <div className='ml-sm-4 mb-2'>
                             <Description id={id}/>
                         </div>
                     </div>
                 </div>
 
-                <div className='col-2'>
+                <div className='col-6 offset-sm-1 col-sm-6 offset-md-3 col-md-4 offset-lg-0 col-lg-2'>
                     <div className='container'>
                         <DateOfExcursion id={id}/>
                     </div>
@@ -37,7 +37,7 @@ const Excursion = ({id, guide, size}) => {
                     </div>
                 </div>
 
-                <div className='col-2'>
+                <div className='col-6 col-sm-5 col-md-5 col-lg-2 heightExcursion'>
                     <Info id={id}/>
                     <div className={`${other.bottom}`}>
                         <ButtonMore guide={guide} id={id}/>

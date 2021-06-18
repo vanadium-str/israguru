@@ -171,3 +171,29 @@ ol li:before {
         display: none;
     }
 }
+
+@media screen and (max-width: 991px){
+    .heightExcursion{
+        height: 12rem;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .wrapExcursion{
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .picCenterSmall{
+        margin-left: 30%;
+    }
+    .paddingInfo{
+        padding-bottom: 4rem;
+    }
+    .smallSizeTitle{
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .smallSizeDescription{
+        text-align: center;
+    }
+}
