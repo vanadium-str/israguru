@@ -35,7 +35,7 @@ const Calendar = () => {
                     selectsEnd
                     startDate={startDate}
                     endDate={endDate}
-                    minDate={startDate}
+                    // minDate={startDate}
                 />
             </div>
         </>

@@ -38,6 +38,7 @@ export function getDayExcursion(date) {
 export function getMonthExcursion(date) {
     return months[date.getMonth()];
 }
+
 export function findByDate (dateOfExcursion, start, end) {
     const date = new Date(dateOfExcursion).getTime();
     const startDate = new Date(start).getTime();
@@ -47,7 +48,6 @@ export function findByDate (dateOfExcursion, start, end) {
         return 1;
     }else return console.log('not found');
 }
-
 // ???? NAME
 export function compareDates (dateOfExcursion, currentDate) {
     const date = new Date(dateOfExcursion).getTime();
@@ -65,13 +65,15 @@ export function swap(items, firstIndex, secondIndex){
 
 export function BubbleSort (arrayOfExcursions) {
     let length = arrayOfExcursions.length;
-    for(let i = 0; i<length - 1; i++){
-        for (let j = 0; j < length - 1 - i; j ++){
-            if(new Date(arrayOfExcursions[j+1][1].date).getTime() < new Date(arrayOfExcursions[j][1].date).getTime()){
-                swap(arrayOfExcursions,j+1, j);
+    for (let i = 0; i < length - 1; i++) {
+        for (let j = 0; j < length - 1 - i; j++) {
+            if (new Date(arrayOfExcursions[j + 1][1].date).getTime() < new Date(arrayOfExcursions[j][1].date).getTime()) {
+                swap(arrayOfExcursions, j + 1, j);
             }
         }
     }
 }
 
 export const excursions = Object.entries(excursionData);
+
+

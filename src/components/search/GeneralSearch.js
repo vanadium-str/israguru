@@ -7,6 +7,7 @@ import {guideInfo} from "../../json/guideInfo";
 const GeneralSearch = () => {
     const {keyword, search, startDate} = useContext(IsraGuruContext);
     const currentExcursions = excursions.filter(k=>compareDates(k[1].date,startDate));
+    console.log(currentExcursions);
     BubbleSort(currentExcursions);
     const inputKeyword = currentExcursions.filter(k=>guideInfo[k[1].guide].name.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())
         || guideInfo[k[1].guide].surname.toLocaleLowerCase().startsWith(keyword.toLocaleLowerCase())

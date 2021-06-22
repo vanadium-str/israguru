@@ -19,6 +19,14 @@
         margin-top: 1rem;
     }
 }
+@media screen and (max-width: 768px ){
+    .guideImg{
+        width: 20rem;
+        height: 3rem;
+    }
+}
+
+
 @media screen and (max-width: 576px){
     .guideImg{
         width: 20rem;

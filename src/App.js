@@ -2,7 +2,7 @@ import './App.css';
 import React, {useState} from 'react';
 import {IsraGuruContext} from "./utils/сontext";
 import SwitchPage from "./components/SwitchPage";
-import StartPage from "./components/StartPage";
+
 
 const App = () => {
 

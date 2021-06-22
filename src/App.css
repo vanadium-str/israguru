@@ -197,3 +197,34 @@ ol li:before {
         text-align: center;
     }
 }
+/*==================================================*/
+@media screen and (max-width: 992px){
+    .aboutExcursion{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 576px){
+    .aboutExcursion{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .smallView{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .smallViewTwo{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /*text-align: center;*/
+    }
+    .smallViewThree{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

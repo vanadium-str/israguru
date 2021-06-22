@@ -17,7 +17,6 @@ const Excursion = ({id, guide, size}) => {
 
             <div className='row shadow mb-3'>
                 <div className='col-12 col-lg-8'>
-
                     <div className='d-flex justify-content-between wrapExcursion'>
                         <div className='mt-2 picCenterSmall'>
                             <Image id={id}/>

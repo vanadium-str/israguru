@@ -12,7 +12,7 @@ const PaymentPage = (props) => {
     return (
         <div className={`${other.themeBack}`}>
             <div className={`${payment.row}`}>
-                <div className='offset-3 col-7'>
+                <div className={`offset-xl-3 offset-lg-4 offset-md-5 offset-sm-0 col-xl-7 col-lg-8 col-md-7 col-sm-12`}>
                     <form>
                         <h2 className='col-2 font-weight-bold mt-5 mb-3 p-0'>
                             Оплата
@@ -60,7 +60,7 @@ const PaymentPage = (props) => {
                             </div>
                         </div>
                         <Link to={`/${paymentSuccessful}/${keyExcursion}`}
-                              className={`${style.btnBig} mr-5`}>
+                              className={`${style.btnBig} mr-5 mb-2 mb-sm-0`}>
                             Продолжить
                         </Link>
                         <Link to={`/${signUpEvent}/${keyExcursion}`}

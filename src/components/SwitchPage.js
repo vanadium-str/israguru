@@ -3,7 +3,6 @@ import {Switch} from "react-router-dom";
 import {Route} from "react-router-dom";
 import FullInfoExcursion from "./view_event/FullInfoExcursion";
 import GuideInfo from "./guideInfo/index";
-import GeneralSearch from "./search/GeneralSearch";
 import SignupEvent from "./signup_event/SignupEvent";
 import PaymentSuccessful from "./payment/PaymentSuccessful";
 import PaymentPage from "./payment/PaymentPage";
