@@ -5,31 +5,28 @@
     }
 }
 @media screen and (max-width: 991px){
-    .listExcursionShort{
-        display: flex;
-        flex-direction: column;
-    }
     .rightBar{
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .rightBarButton {
-        position: relative;
-        margin-top: 1rem;
+        justify-content: space-around;
     }
 }
 @media screen and (max-width: 768px ){
     .guideImg{
-        width: 20rem;
-        height: 3rem;
+        width: 170px;
+        height: 50px;
+    }
+    .guideInfo{
+        top: 6rem;
     }
 }
+@media screen and (max-width: 455px ){
+    .rightBar{
+        display: flex;
+        flex-direction: column;
 
-
-@media screen and (max-width: 576px){
-    .guideImg{
-        width: 20rem;
-        height: 1rem;
+    }
+    .rightBarCenter{
+        justify-content: center;
+        margin: auto;
     }
 }

@@ -172,7 +172,7 @@ ol li:before {
     }
 }
 
-@media screen and (max-width: 991px){
+@media screen and (max-width: 992px){
     .heightExcursion{
         height: 12rem;
     }
@@ -226,5 +226,21 @@ ol li:before {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .contentCenter{
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .contentCenter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
     }
 }

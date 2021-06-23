@@ -20,7 +20,7 @@ const GuideAbout = ({idGuide}) => {
             <div className='mb-3'>
                 Лицензированный гид (верифицирован israguru.com)
             </div>
-            <div className={`${other.scroll}`}>
+            <div className={`${style.scroll}`}>
                 <h4 className='font-weight-bold'>
                     Кто я
                 </h4>
@@ -33,15 +33,16 @@ const GuideAbout = ({idGuide}) => {
                 </h4>
                 {guideExcursions.map((key) => {
                     return (
-                        <div className='row shadow mb-2 mr-2 ml-1 p-2 listExcursionShort'>
-                            <div className='col-xl-9 col-lg-8 p-0'>
+                        <div className='row shadow
+                        mr-3 mr-sm-3 mr-lg-4 mb-2 ml-1 p-2'>
+                            <div className='col-lg-9 p-0'>
                                 <Description key={key[0]} id={key[0]}/>
                             </div>
                             <div className='col-lg-3 rightBar'>
-                                <div>
+                                <div className='rightBarCenter'>
                                     <DateOfExcursion id={key[0]}/>
                                 </div>
-                                <div className={`${other.bottom} mb-5 rightBarButton`}>
+                                <div className={`${other.bottom} rightBarCenter`}>
                                     <ButtonMore guide={key[1].guide} id={key[0]}/>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@ const Index = (props) => {
     let keyGuide = props.match.params.idGuide;
 
     return (
-        <div className={`container-fluid ${other.themeBack}`}>
+        <div className={`container-fluid position-relative ${other.themeBack}`}>
             <div className='row'>
                 <Logo/>
             </div>
@@ -21,7 +21,7 @@ const Index = (props) => {
                          alt='guide'
                          width='100%'/>
                 </div>
-                <div className='col-xl-8 col-lg-8 col-md-7'>
+                <div className='col-xl-8 col-lg-8 col-md-7 guideInfo'>
                     <GuideAbout idGuide={keyGuide}/>
                 </div>
             </div>

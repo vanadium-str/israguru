@@ -15,13 +15,13 @@ import {FaGraduationCap} from "react-icons/fa";
 const FullInfoExcursion = (props) => {
     let keyExcursion = props.match.params.idExcursion;
     return (
-        <div className={`${other.themeBack} container-fluid pr-5`}>
+        <div className={`${other.themeBack} container-fluid pr-5 pr-sm-3`}>
             <div className='row'>
-                <div className='col-12 col-md-5 col-lg-3
+                <div className='col-12 col-md-5 col-lg-4 col-xl-3
                 pb-3 pb-md-0 p-0'>
                     <Logo/>
                 </div>
-                <div className='col-6 col-sm-8 col-md-4 col-lg-6 col-xl-7
+                <div className='col-6 col-sm-8 col-md-4 col-lg-5 col-xl-7
                 offset-lg-1 offset-xl-0
                 ml-4 ml-md-0 mb-5 mt-5'>
                     <Guide guide={excursionData[keyExcursion].guide} id={keyExcursion}/>
@@ -33,9 +33,9 @@ const FullInfoExcursion = (props) => {
             </div>
 
             <div className='row'>
-                <div className='ml-4 ml-sm-0
+                <div className='
                 col-12 col-sm-7 col-md-5 col-lg-4 col-xl-3
-                offset-1'>
+                offset-sm-2 offset-md-0 offset-xl-1'>
                     <Gallery id={keyExcursion}/>
                 </div>
                 <div className='mt-sm-3 mb-3 mb-md-0 mt-md-0 ml-3 ml-sm-0
@@ -57,9 +57,9 @@ const FullInfoExcursion = (props) => {
             </div>
 
             <div className='row'>
-                <div className='ml-4 ml-sm-0
+                <div className='
                 col-12 col-sm-7 col-md-5 col-lg-4 col-xl-3
-                offset-sm-4 offset-md-0 offset-xl-1'>
+                offset-sm-2 offset-md-0 offset-xl-1'>
                     <MapContainer id={keyExcursion}/>
                 </div>
                 <div className='offset-1 offset-sm-0
@@ -73,7 +73,7 @@ const FullInfoExcursion = (props) => {
                             <p className='mb-1'>
                                 <FaInfoCircle/>  {excursionData[keyExcursion].additionalInfo}
                             </p> : <></>}
-                        <p className=''>
+                        <p>
                             <FaGraduationCap/> Уровень сложности материала: {excursionData[keyExcursion].level}
                         </p>
                     </div>

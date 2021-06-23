@@ -49,7 +49,7 @@ const PaymentPage = (props) => {
                                            type="text"
                                            placeholder={new Date().getMonth()}/>
                                 </div>
-                                <div className={`${payment.col50} ml-2`}>
+                                <div className={`${payment.col50}`}>
                                     <label className={`${payment.labelStyle}`}>
                                         CVV
                                     </label>
@@ -60,11 +60,11 @@ const PaymentPage = (props) => {
                             </div>
                         </div>
                         <Link to={`/${paymentSuccessful}/${keyExcursion}`}
-                              className={`${style.btnBig} mr-5 mb-2 mb-sm-0`}>
+                              className={`${style.btnBig} mr-5 mb-2`}>
                             Продолжить
                         </Link>
                         <Link to={`/${signUpEvent}/${keyExcursion}`}
-                              className={`${style.btnWhite} text-center`}>
+                              className={`${style.btnWhite} text-center mt-3`}>
                             Отменить
                         </Link>
                     </form>
