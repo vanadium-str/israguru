@@ -1,7 +1,6 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { GoogleMap, LoadScript,Marker } from '@react-google-maps/api';
 import {excursionData} from "../../json/excursionData";
-import {IsraGuruContext} from "../../utils/сontext";
 const containerStyle = {
     width: '100%',
     height: '250px'

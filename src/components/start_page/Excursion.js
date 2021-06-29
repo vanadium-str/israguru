@@ -31,7 +31,7 @@ const Excursion = ({id, guide, size}) => {
                     <div className='container'>
                         <DateOfExcursion id={id}/>
                     </div>
-                    <div className={`${other.bottom}`}>
+                    <div className={`${other.bottom} ml-2 ml-sm-0`}>
                         <Guide guide={guide} id={id}/>
                     </div>
                 </div>
