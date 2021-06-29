@@ -9,8 +9,6 @@
 
 Link: https://vanadium-str.github.io/project-israguru/
 
-![excursions_page](https://i.imgur.com/EyoKwTS.png "Поиск экскурсии")
-
 ## You can run this project locally, just do:
 * navigate to the main page of the repository on GitHub;
 * above the list of files click  **Code**;
@@ -20,3 +18,15 @@ Link: https://vanadium-str.github.io/project-israguru/
 * type git clone and then paste the URL you copied earlier;
 ### `$ git clone https://github.com/vanadium-str/project-israguru.git`
 * press **Enter** to create your local clone.
+
+Search for excursions: 
+
+<img alt="search_excursion" src="https://i.imgur.com/EyoKwTS.png" width="700" />
+
+Full information about excursion:
+
+<img alt="excursion_page" src="https://i.imgur.com/wjCwgnY.png" width="700" />
+
+Information about guide:
+
+<img alt="guide_page" src="https://i.imgur.com/Fraph1T.png" width="700" />
