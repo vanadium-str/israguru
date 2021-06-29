@@ -7,7 +7,9 @@ import {IsraGuruContext} from "../../utils/сontext";
 import lang from "../../css_modules/header.module.css";
 
 const Header = () => {
-    const {language, setLanguage, setCurrentPage, setShowStartPage} = useContext(IsraGuruContext);
+    const {language, setLanguage, setCurrentPage,
+        setShowStartPage, setStartDate, setEndDate,
+    setKeyword, setSearch, setCity, setLevel} = useContext(IsraGuruContext);
 
     return (
         <header className='container-fluid'>
@@ -26,7 +28,8 @@ const Header = () => {
                     </label>
                 </div>
 
-                <div className='col-6 col-sm-4 col-md-3 offset-md-1 offset-lg-0 col-lg-2'>
+                <div className='col-6 col-sm-4 col-md-3 col-lg-2
+                offset-md-1 offset-lg-0'>
                     <label>Место
                         <SelectCity/>
                     </label>
@@ -74,8 +77,22 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
-                <div className='offset-1 col-5 offset-sm-5 col-sm-7 offset-md-1 col-md-3 offset-lg-0 col-lg-1 d-flex align-items-center'>
-                    <button className='btn font-weight-bold'>Сбросить</button>
+                <div className='offset-1 offset-sm-5 offset-md-1 offset-lg-0
+                col-5 col-sm-7 col-md-3 col-lg-1
+                d-flex align-items-center'>
+                    <button className='btn font-weight-bold'
+                            onClick={() => {
+                                setShowStartPage(true);
+                                setCurrentPage(1);
+                                setLanguage('');
+                                setStartDate(new Date());
+                                setEndDate(new Date());
+                                setKeyword('');
+                                setSearch(false);
+                                setCity('');
+                                setLevel('');
+                            }}>Сбросить
+                    </button>
                 </div>
             </header>
         </header>

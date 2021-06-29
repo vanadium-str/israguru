@@ -32,50 +32,68 @@ const SignupEvent = (props) => {
         <div className={`${other.themeBack} container-fluid`}>
 
             <div className='row'>
-                <div>
+                <div className='col-12 col-md-5 col-lg-4 col-xl-3
+                pb-3 pb-md-0 p-0'>
                     <Logo/>
                 </div>
-                <div className='offset-xl-3 offset-lg-4 offset-md-5 offset-sm-0 pt-2 pt-md-0 mt-5'>
+                <div className='pt-5 pt-md-0 mt-5
+                col-12 col-md-7 col-lg-8 col-xl-9
+                offset-1 offset-md-0'>
                     <h2 className={`font-weight-bold`}>
                         Записаться и оплатить
                     </h2>
                 </div>
             </div>
 
-            <div className='row shadow m-4'>
-                <div className='col-xl-3 col-lg-2 col-md-8 col-sm-8
-                offset-lg-0 offset-md-4 offset-sm-4  d-flex align-items-center'>
+            <div className='row shadow m-sm-4'>
+                <div className='col-xl-3 col-lg-2 col-md-7 col-sm-8
+                offset-lg-0 offset-md-5 offset-sm-4
+                d-flex align-items-center mt-2 mt-lg-0
+                contentCenterSignUp'>
                     <Image id={keyExcursion}/>
                 </div>
-                <div className='col-xl-6 col-lg-8 col-md-0 offset-xl-0 offset-lg-2 offset-md-0 mt-3'>
+                <div className='col-xl-6 col-lg-8 col-md-7
+                offset-xl-0 offset-lg-2 offset-md-5 mt-3'>
                     <Description id={keyExcursion}/>
                 </div>
-                <div className='col-xl-3 offset-xl-0 offset-lg-4 offset-md-0 aboutExcursion'>
-                    <div className='ml-3 mt-3'>
-                        <DateOfExcursion id={keyExcursion}/>
+                <div className='row col-xl-3 col-lg-8 col-md-7
+                offset-xl-0 offset-lg-4 offset-md-5'>
+                    <div className='col-sm-12 contentCenter'>
+                        <div className='ml-3 mt-3 contentCenterSignUp
+                            col-12 col-sm-3 col-md-4 col-lg-3 col-xl-12'>
+                            <DateOfExcursion id={keyExcursion}/>
+                        </div>
+                        <div className='contentCenterSignUp
+                        offset-2 offset-sm-0
+                        col-10 col-sm-6 col-md-8 col-lg-5 col-xl-12'>
+                            <Info id={keyExcursion}/>
+                        </div>
                     </div>
-                    <div>
-                        <Info id={keyExcursion}/>
-                    </div>
-                    <div className='mb-3'>
-                        <Guide id={keyExcursion} guide={excursionData[keyExcursion].guide}/>
+                    <div className='mb-3 offset-sm-1
+                    col-sm-4 col-md-3 col-lg-3 col-xl-12
+                    contentCenterSignUp'>
+                        <Guide id={keyExcursion}
+                               guide={excursionData[keyExcursion].guide}/>
                     </div>
                 </div>
             </div>
 
             <div className='row mt-5'>
-                <div className='col-xl-4 col-lg-4 col-md-0 offset-xl-3 offset-lg-4 offset-md-3 offset-sm-2 offset-0'>
-                    <input className={`${sign.signUpEvent}`}
+                <div className='col-xl-4 col-lg-4 col-md-7
+                offset-xl-3 offset-lg-4 offset-md-5 offset-sm-1'>
+                    <input className={`${sign.signUpEvent} contentCenter`}
                            type='text'
                            placeholder='Имя'/>
-                    <input className={`${sign.signUpEvent}`}
+                    <input className={`${sign.signUpEvent} contentCenter`}
                            type='text'
                            placeholder='Телефон'/>
-                    <input className={`${sign.signUpEvent}`}
+                    <input className={`${sign.signUpEvent} contentCenter`}
                            type='text'
                            placeholder='Email'/>
                 </div>
-                <div className='col-xl-4 col-lg-2 col-md- 0 offset-xl-0 offset-lg-1 offset-md-3 offset-sm-2'>
+                <div className={`col-xl-4 col-lg-2 col-md-7
+                    offset-xl-0 offset-lg-1 offset-md-5 offset-sm-1
+                    ${sign.signUpNone}`}>
                     <p className={`font-weight-bold`}>
                         Внимание:
                     </p>
@@ -86,25 +104,32 @@ const SignupEvent = (props) => {
             </div>
 
             <div className='row'>
-                <div className='col-xl-9 col-lg-8  col-md-0 offset-xl-3 offset-lg-4 offset-md-3 offset-sm-2 mt-3'>
-                    <p className={`${sign.text}`}>
-                        <b>Количество</b> (до 10)
-                    </p>
-                    <a className={`ml-4 ${sign.previous} ${sign.round}`}>-</a>
+                <div className='col-xl-9 col-lg-8 col-md-7
+                offset-xl-3 offset-lg-4 offset-md-5 offset-sm-1 mt-3
+                '>
+                    <div className='contentCenterSignUp mb-2 mb-sm-0'>
+                        <p className={`${sign.text}`}>
+                            <b>Количество</b> (до 10)
+                        </p>
+                    </div>
+                    <div className='contentCenterSignUp'>
+                        <a className={`ml-sm-2 ${sign.previous} ${sign.round}`}>-</a>
 
-                    <input
-                        className={`ml-2 ${sign.count} border-0 text-center`}
-                        type='number'
-                        min={0}
-                        defaultValue='0'/>
+                        <input
+                            className={`ml-2 ${sign.count} border-0 text-center`}
+                            type='number'
+                            min={0}
+                            defaultValue='0'/>
 
-                    <a className={`ml-2 ${sign.next} ${sign.round}`}>+</a>
+                        <a className={`ml-2 ${sign.next} ${sign.round}`}>+</a>
+                    </div>
                 </div>
             </div>
 
             <div className='row'>
-                <div className='col-xl-3 col-lg-3 col-md-0 col-sm-3 offset-xl-3 offset-lg-4
-                offset-md-4 offset-sm-4 d-flex flex-column align-items-center'>
+                <div className='col-xl-3 col-lg-3 col-md-8 col-sm-6
+                offset-xl-3 offset-lg-4 offset-md-4 offset-sm-3
+                d-flex flex-column align-items-center'>
                     <Link to={`/${paymentPage}/${keyExcursion}`}
                           className={`${button.btnBig} mt-5`}>
                         Оплатить

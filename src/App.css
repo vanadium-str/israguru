@@ -206,11 +206,6 @@ ol li:before {
     }
 }
 @media screen and (max-width: 576px){
-    .aboutExcursion{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
     .smallView{
         display: flex;
         flex-direction: column;
@@ -220,7 +215,6 @@ ol li:before {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        /*text-align: center;*/
     }
     .smallViewThree{
         display: flex;
@@ -229,18 +223,23 @@ ol li:before {
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1199px){
     .contentCenter{
         display: flex;
         justify-content: space-around;
     }
 }
 
-@media screen and (max-width: 420px) {
-    .contentCenter{
+@media screen and (max-width: 576px) {
+    .contentCenter {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin: auto;
+    }
+
+    .contentCenterSignUp {
+        display: flex;
+        justify-content: center;
     }
 }

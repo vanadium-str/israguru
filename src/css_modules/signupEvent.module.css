@@ -9,6 +9,25 @@
     border-bottom-color: #4c4c4c;
     color: #4c4c4c;
 }
+
+@media screen and (max-width: 576px) {
+    .signUpEvent{
+        width:10rem;
+        height: 25px;
+        margin-bottom: 10px;
+        margin-top: 6px;
+        background-color: transparent;
+        border: none;
+        border-bottom-style: solid;
+        border-bottom-color: #4c4c4c;
+        color: #4c4c4c;
+        display: flex;
+        flex-direction: column;
+    }
+    .signUpNone{
+        display: none;
+    }
+}
 a {
     text-decoration: none;
     display: inline-block;
