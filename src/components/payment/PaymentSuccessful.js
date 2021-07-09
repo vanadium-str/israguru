@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
+import QRCode from "qrcode.react";
 import DateOfExcursion from "../excursionBlock/DateOfExcursion";
 import {FaClock, FaMapMarkerAlt, FaUserFriends} from "react-icons/fa";
 import styled from "styled-components";
@@ -8,15 +9,28 @@ import button from "../../css_modules/button.module.css";
 import {excursionData} from "../../json/excursionData";
 import {guideInfo} from "../../json/guideInfo";
 import {homePage, time} from "../../utils/constants";
+import {IsraGuruContext} from "../../utils/сontext";
+import {PDFDownloadLink} from "@react-pdf/renderer";
+import PdfComponent from "./PDFComponent";
+import emailjs from "emailjs-com";
 
 const StyledPayment = styled.div`
   min-height: 95vh;
 `;
 
 const PaymentSuccessful = (props) => {
+    const {customerData} = useContext(IsraGuruContext);
     let keyExcursion = props.match.params.idExcursion;
     const timeFull = excursionData[keyExcursion].timeTo - excursionData[keyExcursion].timeFrom;
-
+    const sendEmail = () => {
+        emailjs.send('service_b1h5ily', 'template_gmtrbm7', customerData, 'user_3XrLj4rgDfjfq4TSQinTf')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+            })
+            .catch((err) => {
+                console.log('FAILED...', err);
+            });
+    }
     return (
         <StyledPayment className={`container-fluid ${other.themeBack}`}>
             <div className='col-xl-8 col-lg-8
@@ -67,21 +81,32 @@ const PaymentSuccessful = (props) => {
                     <div className='col-8 col-sm-8 col-md-8 col-lg-4
                      offset-2 offset-lg-0
                      d-flex align-items-center justify-content-center'>
-                        <img className='w-75'
-                             src='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/QR_code_for_mobile_English_Wikipedia.svg/1200px-QR_code_for_mobile_English_Wikipedia.svg.png'
-                             alt='QR'/>
+                        <div className='w-75'>
+                            <QRCode
+                                id='qrcode'
+                                renderAs = 'canvas'
+                                value ={`http://localhost:3000/project-israguru/payment_successful/${keyExcursion}`}//will be an order number
+                                bgColor='#FFFFFF'
+                                fgColor='#000000'
+                                level = 'M'
+                            />
+                        </div>
+                        {console.log(customerData)}
                     </div>
                 </div>
 
                 <div className='mt-5 contentCenter'>
                     <Link className={`${button.btnBig} 
-                    mr-md-3 mr-lg-5 mb-3`} to={`/${homePage}`}>
+                    mr-md-3 mr-lg-5 mb-3`} to={`/${homePage}`}
+                          // onClick={()=>sendEmail()}
+                    >
                         Сохранить
                     </Link>
-                    <a href='https://www.facebook.com/'
-                       className={`${button.btnWhite} text-center`}>
-                        Поделиться в FB
-                    </a>
+                    <PDFDownloadLink
+                        document={<PdfComponent keyExcursion = {keyExcursion}/>}
+                        fileName='new.pdf'
+                        className={`${button.btnWhite} text-center`}
+                    >Скачать PDF</PDFDownloadLink>
                 </div>
             </div>
         </StyledPayment>

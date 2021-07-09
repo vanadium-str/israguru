@@ -22,7 +22,7 @@ const App = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [showModalWindow, setShowModalWindow] = useState(false);
     const [showStartPage, setShowStartPage] = useState(true);
-
+    const [customerData, setCustomerData] = useState({name:'', phone:0, email:''})
     return (
         <IsraGuruContext.Provider value={
             {
@@ -37,7 +37,8 @@ const App = () => {
                 position, setPosition,
                 currentPage, setCurrentPage,
                 showModalWindow, setShowModalWindow,
-                showStartPage, setShowStartPage
+                showStartPage, setShowStartPage,
+                customerData, setCustomerData
             }
         }>
             <SwitchPage/>

@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import Modal from 'react-modal';
+import emailjs from 'emailjs-com';
 import {Link} from "react-router-dom";
 import Image from "../excursionBlock/Image";
 import Description from "../excursionBlock/Description";
@@ -18,7 +19,7 @@ import {excursionData} from "../../json/excursionData";
 
 const SignupEvent = (props) => {
     let keyExcursion = props.match.params.idExcursion;
-    const {showModalWindow, setShowModalWindow} = useContext(IsraGuruContext);
+    const {showModalWindow, setShowModalWindow,customerData, setCustomerData} = useContext(IsraGuruContext);
 
     const showModal = () => {
         setShowModalWindow(true);
@@ -27,6 +28,10 @@ const SignupEvent = (props) => {
     const hideModal = () => {
         setShowModalWindow(false);
     };
+    const handleGetData= event => {
+        event.preventDefault();
+    }
+
 
     return (
         <div className={`${other.themeBack} container-fluid`}>
@@ -80,16 +85,28 @@ const SignupEvent = (props) => {
 
             <div className='row mt-5'>
                 <div className='col-xl-4 col-lg-4 col-md-7
-                offset-xl-3 offset-lg-4 offset-md-5 offset-sm-1'>
+                offset-xl-3 offset-lg-4 offset-md-5 offset-sm-1' onSubmit={handleGetData}>
                     <input className={`${sign.signUpEvent} contentCenter`}
                            type='text'
-                           placeholder='Имя'/>
+                           placeholder='Имя'
+                           name='name'
+                           value={customerData.name}
+                           onChange={ e=>setCustomerData({...customerData, name: e.target.value})}
+                    />
                     <input className={`${sign.signUpEvent} contentCenter`}
                            type='text'
-                           placeholder='Телефон'/>
+                           placeholder='Телефон'
+                           name='phone'
+                           // value={customerData.phone}
+                           onChange={ e=>setCustomerData({...customerData, phone: e.target.value})}
+                    />
                     <input className={`${sign.signUpEvent} contentCenter`}
                            type='text'
-                           placeholder='Email'/>
+                           placeholder='Email'
+                           name='email'
+                           value={customerData.email}
+                           onChange={ e=>setCustomerData({...customerData, email: e.target.value})}
+                    />
                 </div>
                 <div className={`col-xl-4 col-lg-2 col-md-7
                     offset-xl-0 offset-lg-1 offset-md-5 offset-sm-1
@@ -131,7 +148,8 @@ const SignupEvent = (props) => {
                 offset-xl-3 offset-lg-4 offset-md-4 offset-sm-3
                 d-flex flex-column align-items-center'>
                     <Link to={`/${paymentPage}/${keyExcursion}`}
-                          className={`${button.btnBig} mt-5`}>
+                          className={`${button.btnBig} mt-5`}
+                    >
                         Оплатить
                     </Link>
 
