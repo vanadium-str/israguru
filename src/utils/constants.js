@@ -14,7 +14,11 @@ export const paymentPage = 'payment';
 export const paymentSuccessful = 'payment_successful';
 
 export const currencyURL = 'http://data.fixer.io/api';
-export const key = 'key_here';
+export const CURRENCY_KEY = `${process.env.REACT_APP_CURRENCY_API_KEY}`;
+export const MAP_KEY = `${process.env.REACT_APP_MAP_API_KEY}`;
+export const SERVICE_ID = `${process.env.REACT_APP_EMAILSERVICE_API_KEY}`;
+export const templateID = `${process.env.REACT_APP_EMAILTEMPLATE_API_KEY}`;
+export const userID = `${process.env.REACT_APP_EMAILUSER_API_KEY}`;
 
 export const time = (time)=>{
     if(time===1 || time===21){

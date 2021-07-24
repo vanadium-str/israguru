@@ -4,6 +4,7 @@ import Footer from "./start_page/Footer";
 import style from "../css_modules/button.module.css";
 import {IsraGuruContext} from "../utils/сontext";
 import GeneralSearch from "./search/GeneralSearch";
+import {SERVICE_ID, templateID, userID} from "../utils/constants";
 
 const StartPage = () => {
     const {showStartPage, setShowStartPage} = useContext(IsraGuruContext);

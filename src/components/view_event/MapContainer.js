@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import { GoogleMap, LoadScript,Marker } from '@react-google-maps/api';
 import {excursionData} from "../../json/excursionData";
+import {MAP_KEY} from "../../utils/constants";
 const containerStyle = {
     width: '100%',
     height: '250px'
@@ -11,7 +12,7 @@ const MapContainer = ({id}) => {
     };
     return (
         <LoadScript
-            googleMapsApiKey="key_here"
+            googleMapsApiKey={MAP_KEY}
         >
             <GoogleMap
                 streetView={''}

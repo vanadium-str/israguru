@@ -13,6 +13,7 @@ import {IsraGuruContext} from "../../utils/сontext";
 import {PDFDownloadLink} from "@react-pdf/renderer";
 import PdfComponent from "./PDFComponent";
 import emailjs from "emailjs-com";
+import {SERVICE_ID,templateID,userID} from '../../utils/constants';
 
 const StyledPayment = styled.div`
   min-height: 95vh;
@@ -22,8 +23,9 @@ const PaymentSuccessful = (props) => {
     const {customerData} = useContext(IsraGuruContext);
     let keyExcursion = props.match.params.idExcursion;
     const timeFull = excursionData[keyExcursion].timeTo - excursionData[keyExcursion].timeFrom;
+    console.log(SERVICE_ID, templateID, userID);
     const sendEmail = () => {
-        emailjs.send('service_b1h5ily', 'template_gmtrbm7', customerData, 'user_3XrLj4rgDfjfq4TSQinTf')
+        emailjs.send(`${SERVICE_ID}`, `${templateID}`, customerData, `${userID}`)
             .then((response) => {
                 console.log('SUCCESS!', response.status, response.text);
             })
@@ -98,7 +100,7 @@ const PaymentSuccessful = (props) => {
                 <div className='mt-5 contentCenter'>
                     <Link className={`${button.btnBig} 
                     mr-md-3 mr-lg-5 mb-3`} to={`/${homePage}`}
-                          // onClick={()=>sendEmail()}
+                          onClick={()=>sendEmail()}
                     >
                         Сохранить
                     </Link>
